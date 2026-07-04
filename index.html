@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#EDE6D3">
+  <meta name="theme-color" content="#F4EFE7">
   <title>Ridhi Tanwar &mdash; Social Media Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,28 +14,28 @@
     rel="stylesheet">
   <style>
     :root {
-      /* base editorial palette */
-      --paper: #EDE6D3;
-      --paper-deep: #E4DAC2;
-      --ink: #1B1712;
-      --stone: #E7DEC7;
-      --line: #CBC0A3;
-      --muted: #7A7461;
+      /* base editorial palette — warm bone / porcelain */
+      --paper: #F4EFE7;
+      --paper-deep: #ECE5D9;
+      --ink: #1A1613;
+      --stone: #E9E1D4;
+      --line: #D9CFC0;
+      --muted: #655E4D;
 
-      /* richer accent system */
-      --rust: #B23A2B;
-      /* warm primary */
-      --rust-deep: #8E2A20;
-      --cobalt: #2C3EC4;
-      /* electric Y2K blue */
-      --cobalt-soft: #5566E0;
-      --sage: #7C7A54;
-      --lilac: #C7BBE6;
-      /* soft Y2K lilac */
-      --lilac-tint: #E9E3F0;
-      --butter: #F0C24B;
-      /* premium gold pop */
-      --mint: #BFE3D0;
+      /* richer accent system (names kept; values refreshed) */
+      --rust: #9C2333;
+      /* deep cranberry-oxblood — primary */
+      --rust-deep: #7A1926;
+      --cobalt: #3A4D62;
+      /* dusty slate-blue — secondary */
+      --cobalt-soft: #6A7D93;
+      --sage: #7C8060;
+      --lilac: #C4B8DC;
+      /* soft periwinkle lilac */
+      --lilac-tint: #EAE4F1;
+      --butter: #ECBC50;
+      /* warm gold pop */
+      --mint: #C1E0D2;
 
       /* chrome / metallic */
       --chrome: linear-gradient(135deg, #f7f8fb 0%, #c9cdd6 22%, #9aa0ae 46%, #eef0f5 62%, #a7adbb 82%, #dfe2ea 100%);
@@ -202,7 +202,7 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: rgba(237, 230, 211, 0.72);
+      background: rgba(243, 238, 227, 0.72);
       backdrop-filter: blur(12px) saturate(140%);
       border-bottom: 1px solid transparent;
       transition: border-color .4s var(--ease), background .4s var(--ease);
@@ -210,7 +210,7 @@
 
     .navbar.scrolled {
       border-bottom: 1px solid var(--line);
-      background: rgba(237, 230, 211, 0.9);
+      background: rgba(243, 238, 227, 0.9);
     }
 
     .nav-inner {
@@ -237,7 +237,7 @@
       border-radius: 50%;
       background: var(--rust);
       margin-left: 6px;
-      box-shadow: 0 0 0 3px rgba(178, 58, 43, 0.16);
+      box-shadow: 0 0 0 3px rgba(156, 35, 51, 0.16);
     }
 
     .nav-links {
@@ -369,11 +369,11 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(237, 230, 211, 0.97);
+        background: rgba(243, 238, 227, 0.97);
         backdrop-filter: blur(14px) saturate(140%);
         -webkit-backdrop-filter: blur(14px) saturate(140%);
         border-bottom: 1px solid var(--line);
-        box-shadow: 0 22px 44px rgba(27, 23, 18, 0.16);
+        box-shadow: 0 22px 44px rgba(26, 22, 19, 0.16);
         padding: 4px 20px 14px;
         font-size: 14px;
         letter-spacing: 0.03em;
@@ -444,7 +444,7 @@
       border-radius: 50%;
       background: var(--rust);
       display: inline-block;
-      box-shadow: 0 0 0 3px rgba(178, 58, 43, 0.15);
+      box-shadow: 0 0 0 3px rgba(156, 35, 51, 0.15);
     }
 
     .hero h1 {
@@ -453,23 +453,18 @@
       margin-bottom: 26px;
     }
 
-    .hero h1 .chrome-word {
-      background: var(--chrome);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-stroke: 0.6px rgba(27, 23, 18, 0.35);
-      font-style: italic;
-      font-weight: 600;
+    .hero p.lede {
+      font-size: clamp(19px, 2.2vw, 23px);
+      color: var(--ink);
+      max-width: 450px;
+      margin-bottom: 34px;
+      font-weight: 400;
+      line-height: 1.42;
     }
 
-    .hero p.lede {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 430px;
-      margin-bottom: 36px;
-      font-weight: 400;
-      line-height: 1.55;
+    .hero p.lede em {
+      font-style: italic;
+      color: var(--rust);
     }
 
     .hero-ctas {
@@ -503,29 +498,6 @@
       box-shadow: 4px 4px 0 var(--ink);
     }
 
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border: 1.5px solid var(--ink);
-      border-radius: var(--radius);
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      transition: transform .35s var(--ease), background .3s, color .3s, box-shadow .3s var(--ease);
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-
-    .btn-secondary:hover {
-      transform: translate(-3px, -3px);
-      background: var(--ink);
-      color: var(--paper);
-      box-shadow: 4px 4px 0 var(--cobalt);
-    }
-
     /* profile photo frame */
     .hero-visual {
       position: relative;
@@ -537,7 +509,7 @@
       justify-content: center;
       overflow: hidden;
       border: 1px solid var(--line);
-      outline: 1px dashed rgba(27, 23, 18, .26);
+      outline: 1px dashed rgba(26, 22, 19, .26);
       outline-offset: 9px;
     }
 
@@ -585,7 +557,7 @@
       width: 66px;
       height: 24px;
       z-index: 5;
-      background: repeating-linear-gradient(45deg, rgba(178, 58, 43, 0.52) 0 6px, rgba(178, 58, 43, 0.28) 6px 12px);
+      background: repeating-linear-gradient(45deg, rgba(156, 35, 51, 0.52) 0 6px, rgba(156, 35, 51, 0.28) 6px 12px);
       transform: rotate(-5deg);
       box-shadow: 0 3px 6px rgba(0, 0, 0, .14);
     }
@@ -628,7 +600,7 @@
       content: '';
       position: absolute;
       inset: -7px;
-      border: 1px dashed rgba(27, 23, 18, 0.4);
+      border: 1px dashed rgba(26, 22, 19, 0.4);
       border-radius: 50%;
     }
 
@@ -673,7 +645,7 @@
       width: 126px;
       height: 14px;
       pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 118 8' stroke='%23B23A2B' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 118 8' stroke='%239C2333' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       opacity: .75;
     }
@@ -738,7 +710,7 @@
       -webkit-backdrop-filter: blur(18px) saturate(150%);
       border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 18px;
-      box-shadow: 0 24px 60px rgba(27, 23, 18, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      box-shadow: 0 24px 60px rgba(26, 22, 19, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
       padding: 20px 20px 18px;
       transform: rotate(-2deg);
       animation: floatIn .8s var(--ease) .35s backwards;
@@ -891,7 +863,7 @@
 
     .marquee-track span::after {
       content: '\2726';
-      color: var(--rust);
+      color: var(--butter);
       font-size: 12px;
     }
 
@@ -1025,7 +997,7 @@
       width: 74px;
       height: 24px;
       z-index: 5;
-      background: repeating-linear-gradient(45deg, rgba(44, 62, 196, 0.5) 0 6px, rgba(44, 62, 196, 0.28) 6px 12px);
+      background: repeating-linear-gradient(45deg, rgba(58, 77, 98, 0.5) 0 6px, rgba(58, 77, 98, 0.28) 6px 12px);
       transform: rotate(4deg);
       box-shadow: 0 3px 6px rgba(0, 0, 0, .12);
     }
@@ -1202,10 +1174,10 @@
     }
 
     .process .tag {
-      color: var(--rust);
+      color: rgba(243, 238, 227, 0.92);
       background: var(--ink);
-      box-shadow: 2px 2px 0 rgba(237, 230, 211, 0.3);
-      border-color: rgba(237, 230, 211, 0.4);
+      box-shadow: 2px 2px 0 var(--rust);
+      border-color: rgba(243, 238, 227, 0.4);
     }
 
     .process .section-head h2 {
@@ -1213,7 +1185,7 @@
     }
 
     .process .section-head p {
-      color: rgba(237, 230, 211, 0.5);
+      color: rgba(243, 238, 227, 0.5);
     }
 
     .process-track {
@@ -1229,7 +1201,7 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, rgba(237, 230, 211, 0.05), rgba(237, 230, 211, 0.25), rgba(237, 230, 211, 0.05));
+      background: linear-gradient(90deg, rgba(243, 238, 227, 0.05), rgba(243, 238, 227, 0.25), rgba(243, 238, 227, 0.05));
       transform: scaleX(var(--rule, 1));
       transform-origin: left;
     }
@@ -1244,7 +1216,7 @@
       height: 44px;
       border-radius: 50%;
       background: var(--ink);
-      border: 1px solid rgba(237, 230, 211, 0.3);
+      border: 1px solid rgba(243, 238, 227, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1261,7 +1233,7 @@
     .process-step:hover .dot {
       background: var(--rust);
       border-color: var(--rust);
-      box-shadow: 0 0 0 5px rgba(178, 58, 43, 0.18);
+      box-shadow: 0 0 0 5px rgba(156, 35, 51, 0.18);
     }
 
     .process-step h4 {
@@ -1274,7 +1246,7 @@
 
     .process-step p {
       font-size: 12px;
-      color: rgba(237, 230, 211, 0.5);
+      color: rgba(243, 238, 227, 0.5);
       line-height: 1.5;
     }
 
@@ -1303,7 +1275,7 @@
       margin: 0 auto;
       max-width: 1240px;
       padding: 80px 56px;
-      outline: 1px dashed rgba(237, 230, 211, 0.22);
+      outline: 1px dashed rgba(243, 238, 227, 0.22);
       outline-offset: 11px;
       position: relative;
       overflow: hidden;
@@ -1324,10 +1296,10 @@
     }
 
     .case-study .tag {
-      color: var(--rust);
+      color: rgba(243, 238, 227, 0.92);
       background: var(--ink);
-      box-shadow: 2px 2px 0 rgba(237, 230, 211, 0.3);
-      border-color: rgba(237, 230, 211, 0.4);
+      box-shadow: 2px 2px 0 var(--rust);
+      border-color: rgba(243, 238, 227, 0.4);
     }
 
     .case-header {
@@ -1348,7 +1320,7 @@
     }
 
     .case-header h2 em {
-      color: var(--rust);
+      color: var(--butter);
       font-style: italic;
     }
 
@@ -1385,7 +1357,7 @@
     .case-client span {
       font-family: 'Space Mono', monospace;
       font-size: 11px;
-      color: rgba(237, 230, 211, 0.5);
+      color: rgba(243, 238, 227, 0.5);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -1403,8 +1375,8 @@
     .case-stat {
       flex: 1;
       min-width: 150px;
-      background: rgba(237, 230, 211, 0.04);
-      border: 1px solid rgba(237, 230, 211, 0.14);
+      background: rgba(243, 238, 227, 0.04);
+      border: 1px solid rgba(243, 238, 227, 0.14);
       border-radius: 12px;
       padding: 20px 22px;
     }
@@ -1428,7 +1400,7 @@
 
     .case-stat span {
       font-size: 12px;
-      color: rgba(237, 230, 211, 0.55);
+      color: rgba(243, 238, 227, 0.55);
       line-height: 1.4;
     }
 
@@ -1459,7 +1431,7 @@
     .cs-block-head span {
       font-family: 'Space Mono', monospace;
       font-size: 11px;
-      color: rgba(237, 230, 211, 0.5);
+      color: rgba(243, 238, 227, 0.5);
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
@@ -1467,7 +1439,7 @@
     .cs-block-head .rule {
       flex: 1;
       height: 1px;
-      background: rgba(237, 230, 211, 0.14);
+      background: rgba(243, 238, 227, 0.14);
     }
 
     /* reels: two side by side, compact */
@@ -1479,8 +1451,8 @@
     }
 
     .reel-card {
-      background: rgba(237, 230, 211, 0.04);
-      border: 1px solid rgba(237, 230, 211, 0.14);
+      background: rgba(243, 238, 227, 0.04);
+      border: 1px solid rgba(243, 238, 227, 0.14);
       border-radius: 14px;
       overflow: hidden;
       transition: transform .4s var(--ease), border-color .4s;
@@ -1488,7 +1460,7 @@
 
     .reel-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(237, 230, 211, 0.3);
+      border-color: rgba(243, 238, 227, 0.3);
     }
 
     .reel-media {
@@ -1525,15 +1497,15 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      color: rgba(237, 230, 211, 0.4);
+      color: rgba(243, 238, 227, 0.4);
     }
 
     .reel-media .ph .play-btn {
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      background: rgba(237, 230, 211, 0.08);
-      border: 1.5px solid rgba(237, 230, 211, 0.4);
+      background: rgba(243, 238, 227, 0.08);
+      border: 1.5px solid rgba(243, 238, 227, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1578,7 +1550,7 @@
 
     .reel-info p {
       font-size: 12px;
-      color: rgba(237, 230, 211, 0.55);
+      color: rgba(243, 238, 227, 0.55);
       line-height: 1.5;
     }
 
@@ -1590,10 +1562,28 @@
       max-width: 660px;
     }
 
+    /* 4-up variant used by the additional case studies (Creative Explorations
+       mockups + the travel-brand feed) — same card styling, wider collection row. */
+    .cover-grid.quad {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: none;
+    }
+
+    .cover-media.sq {
+      aspect-ratio: 1 / 1;
+    }
+
+    @media (max-width:900px) {
+      .cover-grid.quad {
+        grid-template-columns: 1fr 1fr;
+        max-width: none;
+      }
+    }
+
     .cover-card {
       display: block;
-      background: rgba(237, 230, 211, 0.04);
-      border: 1px solid rgba(237, 230, 211, 0.14);
+      background: rgba(243, 238, 227, 0.04);
+      border: 1px solid rgba(243, 238, 227, 0.14);
       border-radius: 14px;
       overflow: hidden;
       transition: transform .4s var(--ease), border-color .4s;
@@ -1601,7 +1591,7 @@
 
     .cover-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(237, 230, 211, 0.3);
+      border-color: rgba(243, 238, 227, 0.3);
     }
 
     .cover-media {
@@ -1631,7 +1621,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      color: rgba(237, 230, 211, 0.4);
+      color: rgba(243, 238, 227, 0.4);
     }
 
     .cover-media .ph span {
@@ -1652,11 +1642,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: rgba(237, 230, 211, 0.8);
+      color: rgba(243, 238, 227, 0.8);
       background: rgba(13, 11, 8, 0.6);
       padding: 5px 9px;
       border-radius: 100px;
-      border: 1px solid rgba(237, 230, 211, 0.25);
+      border: 1px solid rgba(243, 238, 227, 0.25);
       backdrop-filter: blur(4px);
     }
 
@@ -1675,7 +1665,7 @@
 
     .cover-cta .arrow {
       transition: transform .35s var(--ease);
-      color: var(--rust);
+      color: var(--butter);
     }
 
     .cover-card:hover .cover-cta .arrow {
@@ -1696,7 +1686,7 @@
       border-radius: 14px;
       overflow: hidden;
       background: #1c1813;
-      border: 1px solid rgba(237, 230, 211, 0.12);
+      border: 1px solid rgba(243, 238, 227, 0.12);
     }
 
     .g-item img {
@@ -1717,7 +1707,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      color: rgba(237, 230, 211, 0.4);
+      color: rgba(243, 238, 227, 0.4);
       text-align: center;
       padding: 14px;
     }
@@ -1725,7 +1715,7 @@
     .g-item .ph svg {
       width: 26px;
       height: 26px;
-      stroke: rgba(237, 230, 211, 0.4);
+      stroke: rgba(243, 238, 227, 0.4);
       stroke-width: 1.4;
       fill: none;
     }
@@ -1748,11 +1738,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: rgba(237, 230, 211, 0.85);
+      color: rgba(243, 238, 227, 0.85);
       background: rgba(13, 11, 8, 0.55);
       padding: 4px 8px;
       border-radius: 100px;
-      border: 1px solid rgba(237, 230, 211, 0.22);
+      border: 1px solid rgba(243, 238, 227, 0.22);
       backdrop-filter: blur(4px);
     }
 
@@ -1786,7 +1776,8 @@
     @media (max-width:560px) {
 
       .reel-grid,
-      .cover-grid {
+      .cover-grid,
+      .cover-grid.quad {
         grid-template-columns: 1fr;
         max-width: 340px;
         margin: 0 auto;
@@ -1877,6 +1868,14 @@
       background: var(--paper);
     }
 
+    /* Skill chips (what she does) read as solid accent; tool chips (what she uses)
+       stay quiet + outlined — a small hierarchy inside the same chip system. */
+    .tool-chips .sk {
+      background: var(--rust);
+      border-color: var(--rust);
+      color: var(--paper);
+    }
+
     @media (max-width:900px) {
       .skills-grid {
         grid-template-columns: 1fr 1fr;
@@ -1930,7 +1929,6 @@
 
     .contact .sub {
       color: var(--muted);
-      font-size: 15px;
       max-width: 420px;
       margin: 0 auto 52px;
       font-family: 'Space Mono', monospace;
@@ -1993,8 +1991,8 @@
       font-size: 14px;
       color: var(--muted);
       line-height: 1.6;
-      background: rgba(44, 62, 196, 0.06);
-      border: 1px solid rgba(44, 62, 196, 0.2);
+      background: rgba(58, 77, 98, 0.06);
+      border: 1px solid rgba(58, 77, 98, 0.2);
       border-radius: 14px;
       padding: 18px 24px;
     }
@@ -2010,7 +2008,7 @@
       background: var(--paper);
       padding: 2px 9px;
       border-radius: 6px;
-      border: 1px solid rgba(44, 62, 196, 0.3);
+      border: 1px solid rgba(58, 77, 98, 0.3);
     }
 
     footer {
@@ -2115,7 +2113,7 @@
 
     .process [data-num]::before,
     .case-study [data-num]::before {
-      -webkit-text-stroke-color: rgba(237, 230, 211, 0.16);
+      -webkit-text-stroke-color: rgba(243, 238, 227, 0.16);
     }
 
     @media (max-width:760px) {
@@ -2220,8 +2218,7 @@
         width: 100%;
       }
 
-      .btn-primary,
-      .btn-secondary {
+      .btn-primary {
         flex: 1 1 100%;
         justify-content: center;
       }
@@ -2261,18 +2258,16 @@
   <!-- ================= HERO ================= -->
   <section class="hero wrap" id="top">
     <div class="hero-copy reveal" data-num="01">
-      <div class="eyebrow"><span class="dot"></span>N&deg;01 &mdash; Social Media Manager</div>
-      <h1>Your feed called.<br>It wants a <span class="chrome-word">glow-up.</span></h1>
-      <p class="lede">I'm Ridhi. I turn scroll-past brands into screenshot-worthy ones &mdash; strategy, reels, and
-        content that actually lands.</p>
+      <div class="eyebrow"><span class="dot"></span>Social Media Manager &middot; Content Strategist</div>
+      <h1>Ridhi<br><em>Tanwar.</em></h1>
+      <p class="lede">Strategy&#8209;led stories that make brands <em>unforgettable.</em></p>
       <div class="hero-ctas">
         <a href="#work" class="btn-primary">
-          See the Work
-          <svg class="icon-svg" style="stroke:#EDE6D3;width:14px;height:14px" viewBox="0 0 24 24">
+          See selected work
+          <svg class="icon-svg" style="stroke:#F4EFE7;width:14px;height:14px" viewBox="0 0 24 24">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
         </a>
-        <a href="#contact" class="btn-secondary">Say Hello</a>
       </div>
     </div>
 
@@ -2289,7 +2284,7 @@
       <div class="badge-spin">
         <svg viewBox="0 0 100 100">
           <path id="circlePath" fill="none" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" />
-          <text font-family="Space Mono, monospace" font-size="7.4" font-weight="700" letter-spacing="1" fill="#EDE6D3">
+          <text font-family="Space Mono, monospace" font-size="7.4" font-weight="700" letter-spacing="1" fill="#F4EFE7">
             <textPath href="#circlePath">AVAILABLE FOR WORK &bull; AVAILABLE FOR WORK &bull; </textPath>
           </text>
         </svg>
@@ -2342,10 +2337,10 @@
   <!-- ================= MARQUEE ================= -->
   <div class="marquee">
     <div class="marquee-track">
-      <span>Reels That Rewatch</span><span>Carousels That Save</span><span>Stories Daily</span><span>Brand
-        Identity</span><span>Content Strategy</span><span>Community That Stays</span>
-      <span>Reels That Rewatch</span><span>Carousels That Save</span><span>Stories Daily</span><span>Brand
-        Identity</span><span>Content Strategy</span><span>Community That Stays</span>
+      <span>Strategy First</span><span>Brands Built to Be Remembered</span><span>Stories That Sell</span><span>Content
+        With Intent</span><span>Feeds With a Point of View</span><span>Identity by Design</span>
+      <span>Strategy First</span><span>Brands Built to Be Remembered</span><span>Stories That Sell</span><span>Content
+        With Intent</span><span>Feeds With a Point of View</span><span>Identity by Design</span>
     </div>
   </div>
 
@@ -2566,7 +2561,7 @@
                 </video>
                 <div class="ph">
                   <div class="play-btn"><svg class="icon-svg"
-                      style="width:18px;height:18px;stroke:rgba(237,230,211,0.6)" viewBox="0 0 24 24">
+                      style="width:18px;height:18px;stroke:rgba(243,238,227,0.6)" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7-11-7z" />
                     </svg></div>
                   <span>reel-1.mp4</span>
@@ -2586,7 +2581,7 @@
                 </video>
                 <div class="ph">
                   <div class="play-btn"><svg class="icon-svg"
-                      style="width:18px;height:18px;stroke:rgba(237,230,211,0.6)" viewBox="0 0 24 24">
+                      style="width:18px;height:18px;stroke:rgba(243,238,227,0.6)" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7-11-7z" />
                     </svg></div>
                   <span>reel-2.mp4</span>
@@ -2703,41 +2698,184 @@
     </div>
   </section>
 
+  <!-- ================= CREATIVE EXPLORATIONS — CASE STUDY 02 ================= -->
+  <section class="section" id="work-02">
+    <div class="wrap">
+      <div class="case-study reveal">
+        <div class="case-header" data-num="06">
+          <div>
+            <span class="tag">N&deg;06 &mdash; Case Study</span>
+            <h2>Different briefs.<br><em>One point of view.</em></h2>
+          </div>
+          <div class="case-client">
+            <div class="mark">RT</div>
+            <div>
+              <h3>Creative Explorations</h3><span>Personal + Client</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat"><b>4 briefs</b><span>Four projects, four directions &mdash; one creative
+              signature.</span></div>
+          <div class="case-stat"><b>Concept &rarr; comp</b><span>Every idea taken through to a finished
+              mockup.</span></div>
+          <div class="case-stat"><b>Full craft</b><span>Type, layout, colour &amp; finish &mdash; all mine.</span></div>
+        </div>
+
+        <!-- MOCKUPS -->
+        <div class="cs-block">
+          <div class="cs-block-head">
+            <h3>Mockups</h3><span>Selected creative work</span>
+            <div class="rule"></div>
+          </div>
+          <div class="cover-grid quad">
+            <!-- REPLACE href with a project/Behance link; drop mockup as mockup-1.jpg -->
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media">
+                <span class="badge">Brand Identity</span>
+                <img src="mockup-1.jpg" alt="Creative mockup &mdash; brand identity" onerror="this.remove()">
+                <div class="ph"><span>mockup-1.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
+            </a>
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media">
+                <span class="badge">Launch Campaign</span>
+                <img src="mockup-2.jpg" alt="Creative mockup &mdash; launch campaign" onerror="this.remove()">
+                <div class="ph"><span>mockup-2.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
+            </a>
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media">
+                <span class="badge">Poster Series</span>
+                <img src="mockup-3.jpg" alt="Creative mockup &mdash; poster series" onerror="this.remove()">
+                <div class="ph"><span>mockup-3.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
+            </a>
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media">
+                <span class="badge">Motion Reel</span>
+                <img src="mockup-4.jpg" alt="Creative mockup &mdash; motion reel" onerror="this.remove()">
+                <div class="ph"><span>mockup-4.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VOYARA (TRAVEL BRAND) — CASE STUDY 03 ================= -->
+  <section class="section" id="work-03">
+    <div class="wrap">
+      <div class="case-study reveal">
+        <div class="case-header" data-num="07">
+          <div>
+            <span class="tag">N&deg;07 &mdash; Case Study</span>
+            <h2>The trip.<br><em>Before the trip.</em></h2>
+          </div>
+          <div class="case-client">
+            <!-- REPLACE: swap "Voyara / VY" for the real travel-brand name + monogram -->
+            <div class="mark">VY</div>
+            <div>
+              <h3>Voyara</h3><span>Travel Brand &middot; Client</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat"><b>Feed&#8209;first</b><span>A grid built to sell the destination before the ticket's
+              booked.</span></div>
+          <div class="case-stat"><b>One look</b><span>Captions, covers &amp; colour in sync.</span></div>
+          <div class="case-stat"><b>Save&#8209;worthy</b><span>Posts people bookmark for later.</span></div>
+        </div>
+
+        <!-- TRAVEL POSTS -->
+        <div class="cs-block">
+          <div class="cs-block-head">
+            <h3>The Feed</h3><span>Four posts &bull; one story</span>
+            <div class="rule"></div>
+          </div>
+          <div class="cover-grid quad">
+            <!-- REPLACE href with the real Instagram post URL; drop post as travel-1.jpg -->
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media sq">
+                <span class="badge">Destination Reel</span>
+                <img src="travel-1.jpg" alt="Voyara &mdash; destination reel" onerror="this.remove()">
+                <div class="ph"><span>travel-1.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
+            </a>
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media sq">
+                <span class="badge">Itinerary Carousel</span>
+                <img src="travel-2.jpg" alt="Voyara &mdash; itinerary carousel" onerror="this.remove()">
+                <div class="ph"><span>travel-2.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
+            </a>
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media sq">
+                <span class="badge">Golden Hour Feed</span>
+                <img src="travel-3.jpg" alt="Voyara &mdash; golden hour feed" onerror="this.remove()">
+                <div class="ph"><span>travel-3.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
+            </a>
+            <a class="cover-card" href="#" target="_blank" rel="noopener">
+              <div class="cover-media sq">
+                <span class="badge">Travel Tips</span>
+                <img src="travel-4.jpg" alt="Voyara &mdash; travel tips" onerror="this.remove()">
+                <div class="ph"><span>travel-4.jpg</span></div>
+              </div>
+              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= SKILLS & TOOLS ================= -->
   <section class="skills">
     <div class="wrap section">
-      <div class="section-head reveal" data-num="06">
-        <div><span class="tag">N&deg;06 &mdash; Skills &amp; Tools</span>
+      <div class="section-head reveal" data-num="08">
+        <div><span class="tag">N&deg;08 &mdash; Skills &amp; Tools</span>
           <h2>What's in<br>the kit.</h2>
         </div>
-        <p>The tools behind the work.</p>
+        <p>The skills &mdash; and the kit behind them.</p>
       </div>
 
       <div class="skills-grid">
         <div class="skill-card reveal">
           <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M3 3v18h18" />
+              <path d="M7 15l4-4 3 3 5-6" />
+              <path d="M17 8h3v3" />
+            </svg></div>
+          <h4>Strategy &amp; Planning</h4>
+          <div class="tool-chips"><span class="sk">Content Strategy</span><span class="sk">Content Planning</span><span
+              class="sk">Trend Research</span><span>Notion</span><span>Google Workspace</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" />
+            </svg></div>
+          <h4>Brand &amp; Creative Direction</h4>
+          <div class="tool-chips"><span class="sk">Brand Identity</span><span class="sk">Creative Direction</span><span>Canva</span><span>Photoshop</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
               <rect x="3" y="3" width="18" height="18" rx="3" />
               <path d="M9 8l6 4-6 4V8z" />
             </svg></div>
-          <h4>Design &amp; Edit</h4>
-          <div class="tool-chips"><span>Canva</span><span>Photoshop</span><span>CapCut</span><span>Premiere Pro</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
-              <rect x="3" y="4" width="18" height="16" rx="2" />
-              <path d="M3 9h18M8 4v5" />
-            </svg></div>
-          <h4>Plan &amp; Organize</h4>
-          <div class="tool-chips"><span>Notion</span><span>Google Sheets</span><span>Later</span></div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
-              <path d="M3 17l6-6 4 4 8-8" />
-              <path d="M14 6h7v7" />
-            </svg></div>
-          <h4>Track &amp; Analyze</h4>
-          <div class="tool-chips"><span>Meta Business Suite</span><span>IG Insights</span></div>
+          <h4>Storytelling &amp; Reels</h4>
+          <div class="tool-chips"><span class="sk">Storytelling</span><span class="sk">Reel Strategy</span><span
+              class="sk">Copywriting</span><span>CapCut</span><span>Premiere Pro</span></div>
         </div>
         <div class="skill-card reveal">
           <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
@@ -2745,8 +2883,8 @@
               <circle cx="17" cy="9" r="3" />
               <path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M13 20c0-2.5 2-4.5 5-4.5s6 2 6 4.5" />
             </svg></div>
-          <h4>Collaborate</h4>
-          <div class="tool-chips"><span>Slack</span><span>Google Drive</span><span>Figma</span></div>
+          <h4>Community &amp; Growth</h4>
+          <div class="tool-chips"><span class="sk">Community Management</span><span>Meta Business Suite</span><span>ChatGPT</span><span>Claude</span></div>
         </div>
       </div>
     </div>
@@ -2754,8 +2892,8 @@
 
   <!-- ================= CONTACT / FOOTER ================= -->
   <section class="contact" id="contact">
-    <div class="wrap" data-num="07">
-      <span class="tag">N&deg;07 &mdash; Contact</span>
+    <div class="wrap" data-num="09">
+      <span class="tag">N&deg;09 &mdash; Contact</span>
       <h2 class="reveal">Let's make your brand<br>the <em>main character.</em></h2>
       <p class="sub reveal">Open to freelance &amp; full-time &mdash; one message away.</p>
 
