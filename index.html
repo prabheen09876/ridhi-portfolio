@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#EDE6D3">
   <title>Ridhi Tanwar &mdash; Social Media Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,6 +57,10 @@
 
     html {
       scroll-behavior: smooth;
+      color-scheme: light;
+      /* Paint the root the paper colour so a dark-mode phone never shows a dark
+         canvas around the body (overscroll, address-bar area, any sub-pixel gap). */
+      background: var(--paper);
     }
 
     body {
@@ -118,6 +124,27 @@
     @media (max-width:900px) {
       .wrap {
         padding: 0 24px;
+      }
+    }
+
+    /* When .wrap sits on the SAME element as a vertical-only padding class
+       (.hero / .section / .section-tight), those shorthands set horizontal
+       padding to 0 and cancel .wrap's side gutters — so the content ran flush
+       to the screen edge on phones. Restore the gutters here (higher specificity). */
+    .hero.wrap,
+    .wrap.section,
+    .wrap.section-tight {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (max-width:900px) {
+
+      .hero.wrap,
+      .wrap.section,
+      .wrap.section-tight {
+        padding-left: 24px;
+        padding-right: 24px;
       }
     }
 
