@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#F4EFE7">
+  <meta name="theme-color" content="#F8F4FC">
   <title>Ridhi Tanwar &mdash; Social Media Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,33 +14,34 @@
     rel="stylesheet">
   <style>
     :root {
-      /* base editorial palette — warm bone / porcelain */
-      --paper: #F4EFE7;
-      --paper-deep: #ECE5D9;
-      --ink: #1A1613;
-      --stone: #E9E1D4;
-      --line: #D9CFC0;
-      --muted: #655E4D;
+      /* base editorial palette — lavender porcelain / deep plum ink */
+      --paper: #F8F4FC;
+      --paper-deep: #EFE6F8;
+      --ink: #1B0F27;
+      --stone: #F1E8FA;
+      --line: #E1D2F0;
+      --muted: #6E5C86;
 
-      /* richer accent system (names kept; values refreshed) */
-      --rust: #9C2333;
-      /* deep cranberry-oxblood — primary */
-      --rust-deep: #7A1926;
-      --cobalt: #3A4D62;
-      /* dusty slate-blue — secondary */
-      --cobalt-soft: #6A7D93;
-      --sage: #7C8060;
-      --lilac: #C4B8DC;
-      /* soft periwinkle lilac */
-      --lilac-tint: #EAE4F1;
-      --butter: #ECBC50;
-      /* warm gold pop */
-      --mint: #C1E0D2;
+      /* purple / pink / lavender / berry / deep-plum accent system */
+      --rust: #A6295C;
+      /* deep berry — primary */
+      --rust-deep: #7D1D45;
+      --cobalt: #7C3AED;
+      /* rich purple — secondary */
+      --cobalt-soft: #B7A0F0;
+      --sage: #3B1D52;
+      /* deep plum */
+      --lilac: #C9AEEA;
+      /* soft lavender */
+      --lilac-tint: #F1E7FB;
+      --butter: #E85D9E;
+      /* vivid pink pop */
+      --mint: #E3D3F5;
 
-      /* chrome / metallic */
-      --chrome: linear-gradient(135deg, #f7f8fb 0%, #c9cdd6 22%, #9aa0ae 46%, #eef0f5 62%, #a7adbb 82%, #dfe2ea 100%);
-      --chrome-warm: linear-gradient(135deg, #fff7ea 0%, #e6cfa0 30%, #b98f52 52%, #f6e6c4 70%, #cda86a 100%);
-      --holo: linear-gradient(120deg, #f7d3e6, #ccd6ff, #d3f4e6, #f6ecca, #e5d2f0);
+      /* chrome / metallic — foil built from the same purple/pink/berry/plum family */
+      --chrome: linear-gradient(135deg, #7C3AED 0%, #A6295C 32%, #E85D9E 58%, #C9AEEA 82%, #4B2069 100%);
+      --chrome-warm: linear-gradient(135deg, #E85D9E 0%, #A6295C 45%, #7D1D45 75%, #4B2069 100%);
+      --holo: linear-gradient(120deg, #A6295C, #7C3AED, #C9AEEA, #E85D9E, #4B2069);
 
       --radius: 4px;
       --radius-sm: 2px;
@@ -202,7 +203,7 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: rgba(243, 238, 227, 0.72);
+      background: rgba(248, 244, 252, 0.72);
       backdrop-filter: blur(12px) saturate(140%);
       border-bottom: 1px solid transparent;
       transition: border-color .4s var(--ease), background .4s var(--ease);
@@ -210,7 +211,7 @@
 
     .navbar.scrolled {
       border-bottom: 1px solid var(--line);
-      background: rgba(243, 238, 227, 0.9);
+      background: rgba(248, 244, 252, 0.9);
     }
 
     .nav-inner {
@@ -237,7 +238,7 @@
       border-radius: 50%;
       background: var(--rust);
       margin-left: 6px;
-      box-shadow: 0 0 0 3px rgba(156, 35, 51, 0.16);
+      box-shadow: 0 0 0 3px rgba(166, 41, 92, 0.16);
     }
 
     .nav-links {
@@ -369,11 +370,11 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(243, 238, 227, 0.97);
+        background: rgba(248, 244, 252, 0.97);
         backdrop-filter: blur(14px) saturate(140%);
         -webkit-backdrop-filter: blur(14px) saturate(140%);
         border-bottom: 1px solid var(--line);
-        box-shadow: 0 22px 44px rgba(26, 22, 19, 0.16);
+        box-shadow: 0 22px 44px rgba(27, 15, 39, 0.16);
         padding: 4px 20px 14px;
         font-size: 14px;
         letter-spacing: 0.03em;
@@ -444,7 +445,7 @@
       border-radius: 50%;
       background: var(--rust);
       display: inline-block;
-      box-shadow: 0 0 0 3px rgba(156, 35, 51, 0.15);
+      box-shadow: 0 0 0 3px rgba(166, 41, 92, 0.15);
     }
 
     .hero h1 {
@@ -509,7 +510,7 @@
       justify-content: center;
       overflow: hidden;
       border: 1px solid var(--line);
-      outline: 1px dashed rgba(26, 22, 19, .26);
+      outline: 1px dashed rgba(27, 15, 39, .26);
       outline-offset: 9px;
     }
 
@@ -557,7 +558,7 @@
       width: 66px;
       height: 24px;
       z-index: 5;
-      background: repeating-linear-gradient(45deg, rgba(156, 35, 51, 0.52) 0 6px, rgba(156, 35, 51, 0.28) 6px 12px);
+      background: repeating-linear-gradient(45deg, rgba(166, 41, 92, 0.52) 0 6px, rgba(166, 41, 92, 0.28) 6px 12px);
       transform: rotate(-5deg);
       box-shadow: 0 3px 6px rgba(0, 0, 0, .14);
     }
@@ -600,7 +601,7 @@
       content: '';
       position: absolute;
       inset: -7px;
-      border: 1px dashed rgba(26, 22, 19, 0.4);
+      border: 1px dashed rgba(27, 15, 39, 0.4);
       border-radius: 50%;
     }
 
@@ -645,7 +646,7 @@
       width: 126px;
       height: 14px;
       pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 118 8' stroke='%239C2333' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 8 Q 12 2 22 8 T 42 8 T 62 8 T 82 8 T 102 8 T 118 8' stroke='%23A6295C' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       opacity: .75;
     }
@@ -705,12 +706,12 @@
       right: 7%;
       bottom: 30px;
       width: 264px;
-      background: rgba(247, 244, 235, 0.55);
+      background: rgba(248, 245, 253, 0.55);
       backdrop-filter: blur(18px) saturate(150%);
       -webkit-backdrop-filter: blur(18px) saturate(150%);
       border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 18px;
-      box-shadow: 0 24px 60px rgba(26, 22, 19, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      box-shadow: 0 24px 60px rgba(27, 15, 39, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
       padding: 20px 20px 18px;
       transform: rotate(-2deg);
       animation: floatIn .8s var(--ease) .35s backwards;
@@ -840,7 +841,7 @@
       padding: 16px 0;
       overflow: hidden;
       white-space: nowrap;
-      background: linear-gradient(90deg, var(--ink), #241f18);
+      background: linear-gradient(90deg, var(--ink), #241333);
     }
 
     .marquee-track {
@@ -946,7 +947,7 @@
 
     .about-photo {
       position: relative;
-      aspect-ratio: 4/5;
+      aspect-ratio: 3/4;
       border-radius: 16px;
       overflow: hidden;
       background: var(--paper);
@@ -957,6 +958,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       position: absolute;
       inset: 0;
       z-index: 2;
@@ -997,7 +999,7 @@
       width: 74px;
       height: 24px;
       z-index: 5;
-      background: repeating-linear-gradient(45deg, rgba(58, 77, 98, 0.5) 0 6px, rgba(58, 77, 98, 0.28) 6px 12px);
+      background: repeating-linear-gradient(45deg, rgba(124, 58, 237, 0.5) 0 6px, rgba(124, 58, 237, 0.28) 6px 12px);
       transform: rotate(4deg);
       box-shadow: 0 3px 6px rgba(0, 0, 0, .12);
     }
@@ -1169,15 +1171,15 @@
 
     /* ---------- Process ---------- */
     .process {
-      background: radial-gradient(circle at 15% 0%, #26201a 0%, var(--ink) 55%);
+      background: radial-gradient(circle at 15% 0%, #241333 0%, var(--ink) 55%);
       color: var(--paper);
     }
 
     .process .tag {
-      color: rgba(243, 238, 227, 0.92);
+      color: rgba(248, 244, 252, 0.92);
       background: var(--ink);
       box-shadow: 2px 2px 0 var(--rust);
-      border-color: rgba(243, 238, 227, 0.4);
+      border-color: rgba(248, 244, 252, 0.4);
     }
 
     .process .section-head h2 {
@@ -1185,7 +1187,7 @@
     }
 
     .process .section-head p {
-      color: rgba(243, 238, 227, 0.5);
+      color: rgba(248, 244, 252, 0.5);
     }
 
     .process-track {
@@ -1201,7 +1203,7 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, rgba(243, 238, 227, 0.05), rgba(243, 238, 227, 0.25), rgba(243, 238, 227, 0.05));
+      background: linear-gradient(90deg, rgba(248, 244, 252, 0.05), rgba(248, 244, 252, 0.25), rgba(248, 244, 252, 0.05));
       transform: scaleX(var(--rule, 1));
       transform-origin: left;
     }
@@ -1216,7 +1218,7 @@
       height: 44px;
       border-radius: 50%;
       background: var(--ink);
-      border: 1px solid rgba(243, 238, 227, 0.3);
+      border: 1px solid rgba(248, 244, 252, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1233,7 +1235,7 @@
     .process-step:hover .dot {
       background: var(--rust);
       border-color: var(--rust);
-      box-shadow: 0 0 0 5px rgba(156, 35, 51, 0.18);
+      box-shadow: 0 0 0 5px rgba(166, 41, 92, 0.18);
     }
 
     .process-step h4 {
@@ -1246,7 +1248,7 @@
 
     .process-step p {
       font-size: 12px;
-      color: rgba(243, 238, 227, 0.5);
+      color: rgba(248, 244, 252, 0.5);
       line-height: 1.5;
     }
 
@@ -1269,13 +1271,13 @@
 
     /* ================= VERTEXX CASE STUDY (primary work) ================= */
     .case-study {
-      background: radial-gradient(circle at 18% 0%, #241f19 0%, #14110d 60%);
+      background: radial-gradient(circle at 18% 0%, #241333 0%, #160A1F 60%);
       color: var(--paper);
       border-radius: 18px;
       margin: 0 auto;
       max-width: 1240px;
       padding: 80px 56px;
-      outline: 1px dashed rgba(243, 238, 227, 0.22);
+      outline: 1px dashed rgba(248, 244, 252, 0.22);
       outline-offset: 11px;
       position: relative;
       overflow: hidden;
@@ -1296,10 +1298,31 @@
     }
 
     .case-study .tag {
-      color: rgba(243, 238, 227, 0.92);
+      color: rgba(248, 244, 252, 0.92);
       background: var(--ink);
       box-shadow: 2px 2px 0 var(--rust);
-      border-color: rgba(243, 238, 227, 0.4);
+      border-color: rgba(248, 244, 252, 0.4);
+    }
+
+    /* centered heading used above the simplified case studies (no stats/description) */
+    .case-heading {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .case-heading .tag {
+      transform: none;
+    }
+
+    .case-heading h2 {
+      font-size: clamp(30px, 3.8vw, 46px);
+      line-height: 1.05;
+    }
+
+    .case-heading[data-num]::before {
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .case-header {
@@ -1357,7 +1380,7 @@
     .case-client span {
       font-family: 'Space Mono', monospace;
       font-size: 11px;
-      color: rgba(243, 238, 227, 0.5);
+      color: rgba(248, 244, 252, 0.5);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -1375,8 +1398,8 @@
     .case-stat {
       flex: 1;
       min-width: 150px;
-      background: rgba(243, 238, 227, 0.04);
-      border: 1px solid rgba(243, 238, 227, 0.14);
+      background: rgba(248, 244, 252, 0.04);
+      border: 1px solid rgba(248, 244, 252, 0.14);
       border-radius: 12px;
       padding: 20px 22px;
     }
@@ -1400,7 +1423,7 @@
 
     .case-stat span {
       font-size: 12px;
-      color: rgba(243, 238, 227, 0.55);
+      color: rgba(248, 244, 252, 0.55);
       line-height: 1.4;
     }
 
@@ -1431,7 +1454,7 @@
     .cs-block-head span {
       font-family: 'Space Mono', monospace;
       font-size: 11px;
-      color: rgba(243, 238, 227, 0.5);
+      color: rgba(248, 244, 252, 0.5);
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
@@ -1439,7 +1462,7 @@
     .cs-block-head .rule {
       flex: 1;
       height: 1px;
-      background: rgba(243, 238, 227, 0.14);
+      background: rgba(248, 244, 252, 0.14);
     }
 
     /* reels: two side by side, compact */
@@ -1451,8 +1474,8 @@
     }
 
     .reel-card {
-      background: rgba(243, 238, 227, 0.04);
-      border: 1px solid rgba(243, 238, 227, 0.14);
+      background: rgba(248, 244, 252, 0.04);
+      border: 1px solid rgba(248, 244, 252, 0.14);
       border-radius: 14px;
       overflow: hidden;
       transition: transform .4s var(--ease), border-color .4s;
@@ -1460,12 +1483,12 @@
 
     .reel-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(243, 238, 227, 0.3);
+      border-color: rgba(248, 244, 252, 0.3);
     }
 
     .reel-media {
       aspect-ratio: 9/16;
-      background: #0d0b08;
+      background: #160A1F;
       position: relative;
       display: flex;
       align-items: center;
@@ -1479,7 +1502,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      background: #0d0b08;
+      background: #160A1F;
       opacity: 0;
       transition: opacity .45s var(--ease);
     }
@@ -1497,15 +1520,15 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      color: rgba(243, 238, 227, 0.4);
+      color: rgba(248, 244, 252, 0.4);
     }
 
     .reel-media .ph .play-btn {
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      background: rgba(243, 238, 227, 0.08);
-      border: 1.5px solid rgba(243, 238, 227, 0.4);
+      background: rgba(248, 244, 252, 0.08);
+      border: 1.5px solid rgba(248, 244, 252, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1550,7 +1573,7 @@
 
     .reel-info p {
       font-size: 12px;
-      color: rgba(243, 238, 227, 0.55);
+      color: rgba(248, 244, 252, 0.55);
       line-height: 1.5;
     }
 
@@ -1570,7 +1593,20 @@
     }
 
     .cover-media.sq {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 5;
+    }
+
+    /* per-section aspect tweaks for actual image ratios */
+    .cover-media.ratio-perfume {
+      aspect-ratio: 9 / 16;
+    }
+
+    .cover-media.ratio-travel {
+      aspect-ratio: 4 / 5;
+    }
+
+    .cover-media.ratio-creative {
+      aspect-ratio: 4 / 5;
     }
 
     @media (max-width:900px) {
@@ -1582,8 +1618,8 @@
 
     .cover-card {
       display: block;
-      background: rgba(243, 238, 227, 0.04);
-      border: 1px solid rgba(243, 238, 227, 0.14);
+      background: rgba(248, 244, 252, 0.04);
+      border: 1px solid rgba(248, 244, 252, 0.14);
       border-radius: 14px;
       overflow: hidden;
       transition: transform .4s var(--ease), border-color .4s;
@@ -1591,12 +1627,12 @@
 
     .cover-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(243, 238, 227, 0.3);
+      border-color: rgba(248, 244, 252, 0.3);
     }
 
     .cover-media {
       aspect-ratio: 4/5;
-      background: #0d0b08;
+      background: #160A1F;
       position: relative;
       display: flex;
       align-items: center;
@@ -1607,6 +1643,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       position: absolute;
       inset: 0;
       z-index: 2;
@@ -1621,7 +1658,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      color: rgba(243, 238, 227, 0.4);
+      color: rgba(248, 244, 252, 0.4);
     }
 
     .cover-media .ph span {
@@ -1642,11 +1679,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: rgba(243, 238, 227, 0.8);
-      background: rgba(13, 11, 8, 0.6);
+      color: rgba(248, 244, 252, 0.8);
+      background: rgba(12, 6, 20, 0.6);
       padding: 5px 9px;
       border-radius: 100px;
-      border: 1px solid rgba(243, 238, 227, 0.25);
+      border: 1px solid rgba(248, 244, 252, 0.25);
       backdrop-filter: blur(4px);
     }
 
@@ -1676,7 +1713,7 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 172px;
+      grid-auto-rows: 200px;
       grid-auto-flow: dense;
       gap: 14px;
     }
@@ -1685,14 +1722,15 @@
       position: relative;
       border-radius: 14px;
       overflow: hidden;
-      background: #1c1813;
-      border: 1px solid rgba(243, 238, 227, 0.12);
+      background: #20112C;
+      border: 1px solid rgba(248, 244, 252, 0.12);
     }
 
     .g-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       position: absolute;
       inset: 0;
       z-index: 2;
@@ -1707,7 +1745,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      color: rgba(243, 238, 227, 0.4);
+      color: rgba(248, 244, 252, 0.4);
       text-align: center;
       padding: 14px;
     }
@@ -1715,7 +1753,7 @@
     .g-item .ph svg {
       width: 26px;
       height: 26px;
-      stroke: rgba(243, 238, 227, 0.4);
+      stroke: rgba(248, 244, 252, 0.4);
       stroke-width: 1.4;
       fill: none;
     }
@@ -1738,11 +1776,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: rgba(243, 238, 227, 0.85);
-      background: rgba(13, 11, 8, 0.55);
+      color: rgba(248, 244, 252, 0.85);
+      background: rgba(12, 6, 20, 0.55);
       padding: 4px 8px;
       border-radius: 100px;
-      border: 1px solid rgba(243, 238, 227, 0.22);
+      border: 1px solid rgba(248, 244, 252, 0.22);
       backdrop-filter: blur(4px);
     }
 
@@ -1888,6 +1926,112 @@
       }
     }
 
+    /* ---------- Certifications ---------- */
+    .certifications {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cert-card {
+      width: 100%;
+      max-width: 880px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px 30px;
+      box-shadow: 0 1px 0 rgba(27, 15, 39, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--chrome);
+      opacity: .05;
+      pointer-events: none;
+    }
+
+    .cert-card-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .cert-card-head .tag {
+      margin-bottom: 0;
+      transform: none;
+    }
+
+    .cert-card-head h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cert-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: relative;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1 1 200px;
+      background: var(--stone);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 8px 16px 8px 8px;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+    }
+
+    .cert-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--rust);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .cert-icon {
+      width: 32px;
+      height: 32px;
+      flex: none;
+      border-radius: 50%;
+      background: var(--chrome);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-icon .icon-svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2;
+    }
+
+    .cert-item span {
+      font-family: 'Space Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width:560px) {
+      .cert-card {
+        padding: 22px 20px;
+      }
+
+      .cert-item {
+        flex: 1 1 100%;
+      }
+    }
+
     /* ---------- Contact / Footer ---------- */
     .contact {
       padding: 130px 0 70px;
@@ -1991,8 +2135,8 @@
       font-size: 14px;
       color: var(--muted);
       line-height: 1.6;
-      background: rgba(58, 77, 98, 0.06);
-      border: 1px solid rgba(58, 77, 98, 0.2);
+      background: rgba(124, 58, 237, 0.06);
+      border: 1px solid rgba(124, 58, 237, 0.2);
       border-radius: 14px;
       padding: 18px 24px;
     }
@@ -2008,7 +2152,7 @@
       background: var(--paper);
       padding: 2px 9px;
       border-radius: 6px;
-      border: 1px solid rgba(58, 77, 98, 0.3);
+      border: 1px solid rgba(124, 58, 237, 0.3);
     }
 
     footer {
@@ -2113,7 +2257,7 @@
 
     .process [data-num]::before,
     .case-study [data-num]::before {
-      -webkit-text-stroke-color: rgba(243, 238, 227, 0.16);
+      -webkit-text-stroke-color: rgba(248, 244, 252, 0.16);
     }
 
     @media (max-width:760px) {
@@ -2259,12 +2403,12 @@
   <section class="hero wrap" id="top">
     <div class="hero-copy reveal" data-num="01">
       <div class="eyebrow"><span class="dot"></span>Social Media Manager &middot; Content Strategist</div>
-      <h1>Ridhi<br><em>Tanwar.</em></h1>
-      <p class="lede">Strategy&#8209;led stories that make brands <em>unforgettable.</em></p>
+      <h1>Brands,<br>made <em>unforgettable.</em></h1>
+      <p class="lede">Strategy, storytelling, and identity built through content.</p>
       <div class="hero-ctas">
         <a href="#work" class="btn-primary">
           See selected work
-          <svg class="icon-svg" style="stroke:#F4EFE7;width:14px;height:14px" viewBox="0 0 24 24">
+          <svg class="icon-svg" style="stroke:#F8F4FC;width:14px;height:14px" viewBox="0 0 24 24">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
         </a>
@@ -2272,19 +2416,18 @@
     </div>
 
     <div class="hero-visual reveal">
-      <!-- REPLACE: drop your photo in this folder as ridhi.jpg -->
-      <img src="ridhi.jpg" alt="Ridhi Tanwar" onerror="this.remove()">
-      <div class="ph">
+      <img src="HERO SECTION Post.png" alt="Ridhi Tanwar">
+      <div class="ph" style="display:none">
         <svg class="icon-svg ph-icon" style="width:44px;height:44px;stroke:var(--muted)" viewBox="0 0 24 24">
           <circle cx="12" cy="8" r="4" />
           <path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6" />
         </svg>
-        <span>Profile Photo &rarr; ridhi.jpg</span>
+        <span>Profile Photo</span>
       </div>
       <div class="badge-spin">
         <svg viewBox="0 0 100 100">
           <path id="circlePath" fill="none" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" />
-          <text font-family="Space Mono, monospace" font-size="7.4" font-weight="700" letter-spacing="1" fill="#F4EFE7">
+          <text font-family="Space Mono, monospace" font-size="7.4" font-weight="700" letter-spacing="1" fill="#F8F4FC">
             <textPath href="#circlePath">AVAILABLE FOR WORK &bull; AVAILABLE FOR WORK &bull; </textPath>
           </text>
         </svg>
@@ -2349,28 +2492,27 @@
     <div class="wrap section">
       <div class="about-grid">
         <div class="about-photo reveal">
-          <!-- REPLACE: drop your photo in this folder as about.jpg -->
-          <img src="about.jpg" alt="Ridhi Tanwar" onerror="this.remove()">
-          <div class="ph">
+          <img src="YOUT PHOTO-ABOUT SECTION.png" alt="Ridhi Tanwar">
+          <div class="ph" style="display:none">
             <svg class="icon-svg" style="width:40px;height:40px;stroke:var(--muted)" viewBox="0 0 24 24">
               <circle cx="12" cy="8" r="4" />
               <path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6" />
             </svg>
-            <span>Your Photo &rarr; about.jpg</span>
+            <span>About Photo</span>
           </div>
           <div class="photo-sticker">Two<br>brands<br>&amp; counting</div>
         </div>
 
         <div class="about-copy reveal" data-num="02">
           <span class="tag">N&deg;02 &mdash; About</span>
-          <h2>Hi, I'm Ridhi.<br>I make brands<br><em>impossible to scroll past.</em></h2>
-          <p class="intro">A first-year B.Tech student running social media for <em>two Instagram brands</em>. I do the
-            whole thing, end to end &mdash; brainstorming ideas, planning content, shooting, editing, designing, and
-            scheduling. I don't just post; I build brand identities people actually remember. If it lives on the feed,
-            I've probably made it &mdash; and made it look good.</p>
+          <h2>Hi, I'm Ridhi Tanwar.<br>Here's what I<br><em>actually do.</em></h2>
+          <p class="intro">I plan, shoot, edit, design, and schedule every piece of content myself, covering reels,
+            carousels, stories, and everything in between. Right now that means running social media for <em>two
+              Instagram brands</em>, end to end. There are no handoffs and no gaps, just one person making sure the
+            feed always looks intentional.</p>
           <div class="about-signature">
             <span class="name">Ridhi Tanwar</span>
-            <span class="role">Content, end&#8209;to&#8209;end</span>
+            <span class="role">Content, end to end</span>
           </div>
         </div>
       </div>
@@ -2555,16 +2697,15 @@
             <div class="reel-card">
               <div class="reel-media">
                 <span class="reel-flag">Reel 01</span>
-                <!-- REPLACE: drop your video in this folder as reel-1.mp4 (optional poster reel-1.jpg) -->
-                <video controls playsinline preload="metadata" poster="reel-1.jpg">
-                  <source src="reel-1.mp4" type="video/mp4">
+                <video controls playsinline preload="metadata">
+                  <source src="REEL ONE.mp4" type="video/mp4">
                 </video>
-                <div class="ph">
+                <div class="ph" style="display:none">
                   <div class="play-btn"><svg class="icon-svg"
-                      style="width:18px;height:18px;stroke:rgba(243,238,227,0.6)" viewBox="0 0 24 24">
+                      style="width:18px;height:18px;stroke:rgba(248,244,252,0.6)" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7-11-7z" />
                     </svg></div>
-                  <span>reel-1.mp4</span>
+                  <span>Reel 1</span>
                 </div>
               </div>
               <div class="reel-info">
@@ -2575,16 +2716,15 @@
             <div class="reel-card">
               <div class="reel-media">
                 <span class="reel-flag">Reel 02</span>
-                <!-- REPLACE: drop your video in this folder as reel-2.mp4 (optional poster reel-2.jpg) -->
-                <video controls playsinline preload="metadata" poster="reel-2.jpg">
-                  <source src="reel-2.mp4" type="video/mp4">
+                <video controls playsinline preload="metadata">
+                  <source src="REEL 2.mp4" type="video/mp4">
                 </video>
-                <div class="ph">
+                <div class="ph" style="display:none">
                   <div class="play-btn"><svg class="icon-svg"
-                      style="width:18px;height:18px;stroke:rgba(243,238,227,0.6)" viewBox="0 0 24 24">
+                      style="width:18px;height:18px;stroke:rgba(248,244,252,0.6)" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7-11-7z" />
                     </svg></div>
-                  <span>reel-2.mp4</span>
+                  <span>Reel 2</span>
                 </div>
               </div>
               <div class="reel-info">
@@ -2602,21 +2742,19 @@
             <div class="rule"></div>
           </div>
           <div class="cover-grid">
-            <!-- REPLACE href with the real Instagram post URL; drop cover as carousel-1.jpg -->
             <a class="cover-card" href="#" target="_blank" rel="noopener">
               <div class="cover-media">
                 <span class="badge">Carousel 01</span>
-                <img src="carousel-1.jpg" alt="Carousel post cover" onerror="this.remove()">
-                <div class="ph"><span>carousel-1.jpg</span></div>
+                <img src="_sheetA.png" alt="Carousel post cover">
+                <div class="ph" style="display:none"><span>Carousel 1</span></div>
               </div>
               <div class="cover-cta"><span>Click to view</span><span class="arrow">&rarr;</span></div>
             </a>
-            <!-- REPLACE href with the real Instagram post URL; drop cover as carousel-2.jpg -->
             <a class="cover-card" href="#" target="_blank" rel="noopener">
               <div class="cover-media">
                 <span class="badge">Carousel 02</span>
-                <img src="carousel-2.jpg" alt="Carousel post cover" onerror="this.remove()">
-                <div class="ph"><span>carousel-2.jpg</span></div>
+                <img src="WhatsApp Image 2026-07-04 at 16.57.12.jpeg" alt="Carousel post cover">
+                <div class="ph" style="display:none"><span>Carousel 2</span></div>
               </div>
               <div class="cover-cta"><span>Click to view</span><span class="arrow">&rarr;</span></div>
             </a>
@@ -2630,67 +2768,66 @@
             <div class="rule"></div>
           </div>
           <div class="gallery">
-            <!-- REPLACE each img src with your screenshots. Mix sizes = the collage look. -->
             <figure class="g-item tall">
-              <img src="gallery-1.jpg" alt="Story screenshot" onerror="this.remove()">
+              <img src="WhatsApp Image 2026-07-04 at 16.49.24 (1).jpeg" alt="Story screenshot">
               <span class="g-tag">Story</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <rect x="6" y="2" width="12" height="20" rx="3" />
-                </svg><span>gallery-1.jpg</span></div>
+                </svg><span>Story</span></div>
             </figure>
             <figure class="g-item">
-              <img src="gallery-2.jpg" alt="Highlight cover" onerror="this.remove()">
+              <img src="HIGLIGHT.jpeg" alt="Highlight cover">
               <span class="g-tag">Highlight</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="9" />
-                </svg><span>gallery-2.jpg</span></div>
+                </svg><span>Highlight</span></div>
             </figure>
             <figure class="g-item wide">
-              <img src="gallery-3.jpg" alt="Dashboard screenshot" onerror="this.remove()">
+              <img src="DASHBOARD.jpeg" alt="Dashboard screenshot">
               <span class="g-tag">Dashboard</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <path d="M3 3v18h18" />
                   <path d="M7 15l4-4 3 3 5-6" />
-                </svg><span>gallery-3.jpg</span></div>
+                </svg><span>Dashboard</span></div>
             </figure>
             <figure class="g-item">
-              <img src="gallery-4.jpg" alt="Feed screenshot" onerror="this.remove()">
+              <img src="GALLERY 4.jpeg" alt="Feed screenshot">
               <span class="g-tag">Feed</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <rect x="3" y="3" width="18" height="18" rx="2" />
-                </svg><span>gallery-4.jpg</span></div>
+                </svg><span>Feed</span></div>
             </figure>
             <figure class="g-item big">
-              <img src="gallery-5.jpg" alt="Feed grid" onerror="this.remove()">
+              <img src="GREEDVIEW.jpeg" alt="Feed grid">
               <span class="g-tag">Feed Grid</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <rect x="3" y="3" width="7" height="7" />
                   <rect x="14" y="3" width="7" height="7" />
                   <rect x="3" y="14" width="7" height="7" />
                   <rect x="14" y="14" width="7" height="7" />
-                </svg><span>gallery-5.jpg</span></div>
+                </svg><span>Feed Grid</span></div>
             </figure>
             <figure class="g-item tall">
-              <img src="gallery-6.jpg" alt="Story design" onerror="this.remove()">
+              <img src="GALLERY 6.jpeg" alt="Story design">
               <span class="g-tag">Story</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <rect x="6" y="2" width="12" height="20" rx="3" />
-                </svg><span>gallery-6.jpg</span></div>
+                </svg><span>Story</span></div>
             </figure>
             <figure class="g-item">
-              <img src="gallery-7.jpg" alt="Design" onerror="this.remove()">
+              <img src="DESGIN VERTEXX.jpeg" alt="Design">
               <span class="g-tag">Design</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" />
-                </svg><span>gallery-7.jpg</span></div>
+                </svg><span>Design</span></div>
             </figure>
             <figure class="g-item wide">
-              <img src="gallery-8.jpg" alt="Highlight set" onerror="this.remove()">
+              <img src="GALLERY1.jpeg" alt="Highlight set">
               <span class="g-tag">Highlights</span>
-              <div class="ph"><svg viewBox="0 0 24 24">
+              <div class="ph" style="display:none"><svg viewBox="0 0 24 24">
                   <circle cx="7" cy="12" r="4" />
                   <circle cx="17" cy="12" r="4" />
-                </svg><span>gallery-8.jpg</span></div>
+                </svg><span>Highlights</span></div>
             </figure>
           </div>
         </div>
@@ -2698,142 +2835,114 @@
     </div>
   </section>
 
-  <!-- ================= CREATIVE EXPLORATIONS — CASE STUDY 02 ================= -->
+  <!-- ================= PERFUME BRAND MOCKUPS — CASE STUDY 02 ================= -->
   <section class="section" id="work-02">
     <div class="wrap">
+      <div class="case-heading reveal" data-num="06">
+        <span class="tag">N&deg;06 &mdash; Case Study</span>
+        <h2>Perfume Brand Mockups</h2>
+      </div>
       <div class="case-study reveal">
-        <div class="case-header" data-num="06">
-          <div>
-            <span class="tag">N&deg;06 &mdash; Case Study</span>
-            <h2>Different briefs.<br><em>One point of view.</em></h2>
-          </div>
-          <div class="case-client">
-            <div class="mark">RT</div>
-            <div>
-              <h3>Creative Explorations</h3><span>Personal + Client</span>
+        <div class="cover-grid quad">
+          <div class="cover-card">
+            <div class="cover-media ratio-perfume">
+              <img src="PERFUME ONE.png" alt="Perfume Brand Mockups">
+              <div class="ph" style="display:none"><span>Perfume 1</span></div>
             </div>
           </div>
-        </div>
-
-        <div class="case-stats">
-          <div class="case-stat"><b>4 briefs</b><span>Four projects, four directions &mdash; one creative
-              signature.</span></div>
-          <div class="case-stat"><b>Concept &rarr; comp</b><span>Every idea taken through to a finished
-              mockup.</span></div>
-          <div class="case-stat"><b>Full craft</b><span>Type, layout, colour &amp; finish &mdash; all mine.</span></div>
-        </div>
-
-        <!-- MOCKUPS -->
-        <div class="cs-block">
-          <div class="cs-block-head">
-            <h3>Mockups</h3><span>Selected creative work</span>
-            <div class="rule"></div>
+          <div class="cover-card">
+            <div class="cover-media ratio-perfume">
+              <img src="PERFUME TWO.png" alt="Perfume Brand Mockups">
+              <div class="ph" style="display:none"><span>Perfume 2</span></div>
+            </div>
           </div>
-          <div class="cover-grid quad">
-            <!-- REPLACE href with a project/Behance link; drop mockup as mockup-1.jpg -->
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media">
-                <span class="badge">Brand Identity</span>
-                <img src="mockup-1.jpg" alt="Creative mockup &mdash; brand identity" onerror="this.remove()">
-                <div class="ph"><span>mockup-1.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
-            </a>
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media">
-                <span class="badge">Launch Campaign</span>
-                <img src="mockup-2.jpg" alt="Creative mockup &mdash; launch campaign" onerror="this.remove()">
-                <div class="ph"><span>mockup-2.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
-            </a>
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media">
-                <span class="badge">Poster Series</span>
-                <img src="mockup-3.jpg" alt="Creative mockup &mdash; poster series" onerror="this.remove()">
-                <div class="ph"><span>mockup-3.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
-            </a>
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media">
-                <span class="badge">Motion Reel</span>
-                <img src="mockup-4.jpg" alt="Creative mockup &mdash; motion reel" onerror="this.remove()">
-                <div class="ph"><span>mockup-4.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View</span><span class="arrow">&rarr;</span></div>
-            </a>
+          <div class="cover-card">
+            <div class="cover-media ratio-perfume">
+              <img src="PERFUME THREE.png" alt="Perfume Brand Mockups">
+              <div class="ph" style="display:none"><span>Perfume 3</span></div>
+            </div>
+          </div>
+          <div class="cover-card">
+            <div class="cover-media ratio-perfume">
+              <img src="PERFUME FOUR.png" alt="Perfume Brand Mockups">
+              <div class="ph" style="display:none"><span>Perfume 4</span></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= VOYARA (TRAVEL BRAND) — CASE STUDY 03 ================= -->
+  <!-- ================= TRAVEL AI CHATBOT — CASE STUDY 03 ================= -->
   <section class="section" id="work-03">
     <div class="wrap">
+      <div class="case-heading reveal" data-num="07">
+        <span class="tag">N&deg;07 &mdash; Case Study</span>
+        <h2>Travel AI Chatbot</h2>
+      </div>
       <div class="case-study reveal">
-        <div class="case-header" data-num="07">
-          <div>
-            <span class="tag">N&deg;07 &mdash; Case Study</span>
-            <h2>The trip.<br><em>Before the trip.</em></h2>
+        <div class="cover-grid quad">
+          <div class="cover-card">
+            <div class="cover-media ratio-travel">
+              <img src="TRAVEL ONE.png" alt="Travel AI Chatbot">
+              <div class="ph" style="display:none"><span>Travel 1</span></div>
+            </div>
           </div>
-          <div class="case-client">
-            <!-- REPLACE: swap "Voyara / VY" for the real travel-brand name + monogram -->
-            <div class="mark">VY</div>
-            <div>
-              <h3>Voyara</h3><span>Travel Brand &middot; Client</span>
+          <div class="cover-card">
+            <div class="cover-media ratio-travel">
+              <img src="TRAVEL TWO.png" alt="Travel AI Chatbot">
+              <div class="ph" style="display:none"><span>Travel 2</span></div>
+            </div>
+          </div>
+          <div class="cover-card">
+            <div class="cover-media ratio-travel">
+              <img src="TRAVEL THREE.png" alt="Travel AI Chatbot">
+              <div class="ph" style="display:none"><span>Travel 3</span></div>
+            </div>
+          </div>
+          <div class="cover-card">
+            <div class="cover-media ratio-travel">
+              <img src="TRAVEL FOUR.png" alt="Travel AI Chatbot">
+              <div class="ph" style="display:none"><span>Travel 4</span></div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="case-stats">
-          <div class="case-stat"><b>Feed&#8209;first</b><span>A grid built to sell the destination before the ticket's
-              booked.</span></div>
-          <div class="case-stat"><b>One look</b><span>Captions, covers &amp; colour in sync.</span></div>
-          <div class="case-stat"><b>Save&#8209;worthy</b><span>Posts people bookmark for later.</span></div>
-        </div>
-
-        <!-- TRAVEL POSTS -->
-        <div class="cs-block">
-          <div class="cs-block-head">
-            <h3>The Feed</h3><span>Four posts &bull; one story</span>
-            <div class="rule"></div>
+  <!-- ================= CREATIVE MOCKUPS — CASE STUDY 04 ================= -->
+  <section class="section" id="work-04">
+    <div class="wrap">
+      <div class="case-heading reveal" data-num="08">
+        <span class="tag">N&deg;08 &mdash; Case Study</span>
+        <h2>Creative Mockups</h2>
+      </div>
+      <div class="case-study reveal">
+        <div class="cover-grid quad">
+          <div class="cover-card">
+            <div class="cover-media ratio-creative">
+              <img src="CREATIVE MOCK ONE.png" alt="Creative Mockups">
+              <div class="ph" style="display:none"><span>Creative 1</span></div>
+            </div>
           </div>
-          <div class="cover-grid quad">
-            <!-- REPLACE href with the real Instagram post URL; drop post as travel-1.jpg -->
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media sq">
-                <span class="badge">Destination Reel</span>
-                <img src="travel-1.jpg" alt="Voyara &mdash; destination reel" onerror="this.remove()">
-                <div class="ph"><span>travel-1.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
-            </a>
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media sq">
-                <span class="badge">Itinerary Carousel</span>
-                <img src="travel-2.jpg" alt="Voyara &mdash; itinerary carousel" onerror="this.remove()">
-                <div class="ph"><span>travel-2.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
-            </a>
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media sq">
-                <span class="badge">Golden Hour Feed</span>
-                <img src="travel-3.jpg" alt="Voyara &mdash; golden hour feed" onerror="this.remove()">
-                <div class="ph"><span>travel-3.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
-            </a>
-            <a class="cover-card" href="#" target="_blank" rel="noopener">
-              <div class="cover-media sq">
-                <span class="badge">Travel Tips</span>
-                <img src="travel-4.jpg" alt="Voyara &mdash; travel tips" onerror="this.remove()">
-                <div class="ph"><span>travel-4.jpg</span></div>
-              </div>
-              <div class="cover-cta"><span>View post</span><span class="arrow">&rarr;</span></div>
-            </a>
+          <div class="cover-card">
+            <div class="cover-media ratio-creative">
+              <img src="CREATIVE MOCKUP TWO.png" alt="Creative Mockups">
+              <div class="ph" style="display:none"><span>Creative 2</span></div>
+            </div>
+          </div>
+          <div class="cover-card">
+            <div class="cover-media ratio-creative">
+              <img src="CREATIVE MOCKUP THREE.png" alt="Creative Mockups">
+              <div class="ph" style="display:none"><span>Creative 3</span></div>
+            </div>
+          </div>
+          <div class="cover-card">
+            <div class="cover-media ratio-creative">
+              <img src="CREATIVE MOCKUP FOUR.png" alt="Creative Mockups">
+              <div class="ph" style="display:none"><span>Creative 4</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -2843,8 +2952,8 @@
   <!-- ================= SKILLS & TOOLS ================= -->
   <section class="skills">
     <div class="wrap section">
-      <div class="section-head reveal" data-num="08">
-        <div><span class="tag">N&deg;08 &mdash; Skills &amp; Tools</span>
+      <div class="section-head reveal" data-num="09">
+        <div><span class="tag">N&deg;09 &mdash; Skills &amp; Tools</span>
           <h2>What's in<br>the kit.</h2>
         </div>
         <p>The skills &mdash; and the kit behind them.</p>
@@ -2866,7 +2975,8 @@
               <path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" />
             </svg></div>
           <h4>Brand &amp; Creative Direction</h4>
-          <div class="tool-chips"><span class="sk">Brand Identity</span><span class="sk">Creative Direction</span><span>Canva</span><span>Photoshop</span></div>
+          <div class="tool-chips"><span class="sk">Brand Identity</span><span class="sk">Creative
+              Direction</span><span>Canva</span><span>Photoshop</span></div>
         </div>
         <div class="skill-card reveal">
           <div class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
@@ -2884,7 +2994,50 @@
               <path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M13 20c0-2.5 2-4.5 5-4.5s6 2 6 4.5" />
             </svg></div>
           <h4>Community &amp; Growth</h4>
-          <div class="tool-chips"><span class="sk">Community Management</span><span>Meta Business Suite</span><span>ChatGPT</span><span>Claude</span></div>
+          <div class="tool-chips"><span class="sk">Community Management</span><span>Meta Business
+              Suite</span><span>ChatGPT</span><span>Claude</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="section-tight certifications" id="certifications">
+    <div class="wrap">
+      <div class="cert-card reveal">
+        <div class="cert-card-head">
+          <span class="tag">Certifications</span>
+          <h4>Credentials on file</h4>
+        </div>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-icon"><svg class="icon-svg" style="stroke:var(--ink)" viewBox="0 0 24 24">
+                <path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" />
+              </svg></div>
+            <span>Canva Essentials</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><svg class="icon-svg" style="stroke:var(--ink)" viewBox="0 0 24 24">
+                <circle cx="8" cy="9" r="3" />
+                <circle cx="17" cy="9" r="3" />
+                <path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M13 20c0-2.5 2-4.5 5-4.5s6 2 6 4.5" />
+              </svg></div>
+            <span>HubSpot Social Media Marketing</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><svg class="icon-svg" style="stroke:var(--ink)" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <path d="M9 8l6 4-6 4V8z" />
+              </svg></div>
+            <span>HubSpot Content Marketing</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon"><svg class="icon-svg" style="stroke:var(--ink)" viewBox="0 0 24 24">
+                <path d="M3 3v18h18" />
+                <path d="M7 15l4-4 3 3 5-6" />
+              </svg></div>
+            <span>Google Analytics (GA4)</span>
+          </div>
         </div>
       </div>
     </div>
@@ -2892,19 +3045,21 @@
 
   <!-- ================= CONTACT / FOOTER ================= -->
   <section class="contact" id="contact">
-    <div class="wrap" data-num="09">
-      <span class="tag">N&deg;09 &mdash; Contact</span>
+    <div class="wrap" data-num="10">
+      <span class="tag">N&deg;10 &mdash; Contact</span>
       <h2 class="reveal">Let's make your brand<br>the <em>main character.</em></h2>
       <p class="sub reveal">Open to freelance &amp; full-time &mdash; one message away.</p>
 
       <div class="contact-lines reveal">
-        <a class="contact-line" href="mailto:ridhere@gmail.com">
+        <a class="contact-line" href="mailto:hererid@gmail.com">
           <div class="label">Email</div>
-          <div class="val">ridhere@gmail.com</div>
+          <div class="val">hererid@gmail.com</div>
         </a>
-        <a class="contact-line" href="tel:+910000000000">
+        <a class="contact-line" href="tel:+918700118291">
           <div class="label">Phone</div>
-          <div class="val">(+91) XXXXX XXXXX</div>
+          <div class="val">(+91) 8700118291
+
+          </div>
         </a>
       </div>
 
