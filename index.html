@@ -1709,87 +1709,23 @@
       transform: translateX(6px);
     }
 
-    /* content gallery: uniform editorial thumbnail grid (equal-sized cards) */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .g-item {
-      position: relative;
-      aspect-ratio: 4 / 5;
+    /* content gallery: single composite board (one image holds all the content) */
+    .gallery-full {
       border-radius: 14px;
       overflow: hidden;
       background: #20112C;
       border: 1px solid rgba(248, 244, 252, 0.12);
     }
 
-    .g-item img {
+    .gallery-full img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-    }
-
-    .g-item .ph {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: rgba(248, 244, 252, 0.4);
-      text-align: center;
-      padding: 14px;
-    }
-
-    .g-item .ph svg {
-      width: 26px;
-      height: 26px;
-      stroke: rgba(248, 244, 252, 0.4);
-      stroke-width: 1.4;
-      fill: none;
-    }
-
-    .g-item .ph span {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .g-item .g-tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      z-index: 3;
-      font-family: 'Space Mono', monospace;
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: rgba(248, 244, 252, 0.85);
-      background: rgba(12, 6, 20, 0.55);
-      padding: 4px 8px;
-      border-radius: 100px;
-      border: 1px solid rgba(248, 244, 252, 0.22);
-      backdrop-filter: blur(4px);
+      height: auto;
+      display: block;
     }
 
     @media (max-width:900px) {
       .case-study {
         padding: 56px 24px;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -1801,10 +1737,6 @@
         grid-template-columns: 1fr;
         max-width: 340px;
         margin: 0 auto;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -2708,62 +2640,10 @@
             <h3>Content Gallery</h3><span>Selected content &amp; portfolio work</span>
             <div class="rule"></div>
           </div>
-          <!-- Uniform equal-sized thumbnail cards. Add more work by dropping another
-               <figure class="g-item"> with an <img> into this grid. -->
-          <div class="gallery">
-            <figure class="g-item">
-              <img src="vertexx-content-gallery.png" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="WhatsApp Image 2026-07-04 at 16.49.24 (1).jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="HIGLIGHT.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="DASHBOARD.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="GALLERY 4.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="GREEDVIEW.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="GALLERY 6.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="DESGIN VERTEXX.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="GALLERY1.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="_sheetA.png" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="WhatsApp Image 2026-07-04 at 16.57.12.jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="WhatsApp Image 2026-07-04 at 16.57.13 (1).jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-            <figure class="g-item">
-              <img src="WhatsApp Image 2026-07-04 at 16.57.13 (2).jpeg" alt="Vertexx Studio content">
-              <div class="ph" style="display:none"><span>Vertexx</span></div>
-            </figure>
-          </div>
+          <figure class="gallery-full reveal">
+            <img src="vertexx-content-gallery.png"
+              alt="Vertexx Studio content gallery — stories, highlights, dashboard and feed">
+          </figure>
         </div>
       </div>
     </div>
