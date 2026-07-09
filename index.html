@@ -1509,7 +1509,7 @@
       }
     }
 
-    /* ---- 4x3 mockup grid: 12 images, one shared card ---- */
+    /* ---- creative mockup grid ---- */
     .mockup-board {
       background: rgba(248, 244, 252, 0.03);
       border: 1px solid rgba(248, 244, 252, 0.14);
@@ -1521,19 +1521,13 @@
 
     .mockup-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .mockup-grid .cover-media {
       border-radius: 10px;
       border: 1px solid rgba(248, 244, 252, 0.1);
-    }
-
-    @media (max-width:900px) {
-      .mockup-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width:560px) {
@@ -2401,6 +2395,13 @@
     padding: clamp(20px, 3vw, 48px) 0 clamp(24px,4vw,54px);
     isolation:isolate;
   }
+  .vs-root--moodboard{
+    background:
+      radial-gradient(ellipse 52% 45% at 6% 12%, rgba(255,137,197,0.28), transparent 62%),
+      radial-gradient(ellipse 56% 40% at 95% 6%, rgba(107,233,255,0.30), transparent 60%),
+      radial-gradient(ellipse 60% 42% at 50% 102%, rgba(198,255,0,0.22), transparent 68%),
+      linear-gradient(145deg, #fff9dc 0%, #f4eaff 48%, #e5fff8 100%);
+  }
 
   .vs-root::before{
     content:"";
@@ -2645,7 +2646,7 @@
     border-radius:37px;
     overflow:hidden;
     background:#FFFFFF;
-    aspect-ratio:250/520;
+    aspect-ratio:916/1717;
     padding:12px 13px 14px;
   }
   .vs-phone-notch{
@@ -2733,7 +2734,7 @@
     overflow:hidden;
     display:block;
   }
-  .vs-image-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .vs-image-frame img{ width:100%; height:100%; object-fit:contain; object-position:center top; display:block; background:#fff; }
   .vs-image-frame svg{ width:34px; height:34px; opacity:0.6; }
   .vs-image-frame span{
     font-family:'Space Mono', monospace; font-size:9px; font-weight:700;
@@ -2747,6 +2748,18 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:clamp(20px,2.6vw,32px);
+    position:relative;
+  }
+  .vs-root--moodboard .vs-mood-shell::before{
+    content:"";
+    position:absolute;
+    inset:-14px;
+    border-radius:30px;
+    background:
+      linear-gradient(120deg, rgba(255,46,147,0.10), rgba(123,47,247,0.10)),
+      radial-gradient(circle at 80% 20%, rgba(0,224,214,0.12), transparent 56%);
+    z-index:0;
+    pointer-events:none;
   }
   .vs-mood-card{
     display:flex;
@@ -2757,6 +2770,28 @@
     border:1px solid var(--grey-line);
     background:linear-gradient(160deg, #FFFFFF 0%, var(--pearl) 55%, var(--lavender-mist) 100%);
     box-shadow: var(--shadow-soft), inset 0 1px 0 #fff;
+    position:relative;
+    z-index:1;
+  }
+  .vs-root--moodboard .vs-mood-card{
+    border-color:rgba(103,64,163,0.20);
+    box-shadow:0 20px 38px rgba(87,42,140,0.12), inset 0 1px 0 rgba(255,255,255,0.82);
+  }
+  .vs-root--moodboard .vs-mood-card:nth-child(1){
+    background:linear-gradient(160deg, #fff8e4 0%, #ffe8cc 42%, #ffe7f5 100%);
+  }
+  .vs-root--moodboard .vs-mood-card:nth-child(2){
+    background:linear-gradient(160deg, #f5eeff 0%, #e4fbff 46%, #fff2cc 100%);
+  }
+  .vs-root--moodboard .vs-mood-title{
+    color:#321a54;
+  }
+  .vs-root--moodboard .vs-mood-tagline{
+    color:rgba(50,26,84,0.70);
+  }
+  .vs-root--moodboard .vs-mood-frame{
+    border-color:rgba(103,64,163,0.25);
+    box-shadow:0 10px 22px rgba(87,42,140,0.14);
   }
   .vs-mood-title{
     font-family:'Fraunces', serif;
@@ -3122,8 +3157,8 @@
   }
 
   /* Shrunk IG profile stage, sized to sit beside pillars */
-  .vs-stage{ max-width:600px; }
-  .vs-phone-wrap{ width:168px; }
+  .vs-stage{ max-width:720px; }
+  .vs-phone-wrap{ width:210px; }
   .vs-annot{ width:98px; }
   .vs-annot .tag{ font-size:8px; padding:4px 8px; letter-spacing:0.09em; }
 
@@ -4201,8 +4236,8 @@ if you're building yours this week, this is your sign to start</p>
           </div>
         </div>
         <div class="bm-side-stories">
-          <div class="bm-story-mockup"><span class="ring"></span><img src="BLUSHMODE_POST_FIVE.png" alt="Behind-the-scenes Story, campaign shoot" onerror="this.style.display='none'"><span class="tag">Story</span></div>
-          <div class="bm-story-mockup"><span class="ring"></span><img src="BLUSHMODE_POST_SIX.png" alt="Poll Story, vote for next shade" onerror="this.style.display='none'"><span class="tag">Story</span></div>
+          <div class="bm-story-mockup"><span class="ring"></span><img src="story1.jpeg" alt="Story 1 campaign highlight" onerror="this.style.display='none'"><span class="tag">Story 1</span></div>
+          <div class="bm-story-mockup"><span class="ring"></span><img src="story2.jpeg" alt="Story 2 campaign highlight" onerror="this.style.display='none'"><span class="tag">Story 2</span></div>
         </div>
       </div>
     </div>
@@ -4214,7 +4249,7 @@ if you're building yours this week, this is your sign to start</p>
      MOODBOARD PREVIEW — CLIENT WORK
 ============================================================ -->
 <div class="brand-card brand-card--purple">
-<section class="vs-root">
+<section class="vs-root vs-root--moodboard">
   <div class="vs-shell">
 
     <div class="vs-reveal">
@@ -4255,53 +4290,21 @@ if you're building yours this week, this is your sign to start</p>
 
         <div class="mockup-board">
           <div class="mockup-grid">
-            <div class="cover-media ratio-square">
+            <div class="cover-media ratio-creative">
               <img src="CREATIVE MOCK ONE.png" alt="Creative Design Case Study mockup 1">
               <div class="ph" style="display:none"><span>Creative 1</span></div>
             </div>
-            <div class="cover-media ratio-square">
+            <div class="cover-media ratio-creative">
               <img src="CREATIVE MOCKUP TWO.png" alt="Creative Design Case Study mockup 2">
               <div class="ph" style="display:none"><span>Creative 2</span></div>
             </div>
-            <div class="cover-media ratio-square">
+            <div class="cover-media ratio-creative">
               <img src="CREATIVE MOCKUP THREE.png" alt="Creative Design Case Study mockup 3">
               <div class="ph" style="display:none"><span>Creative 3</span></div>
             </div>
-            <div class="cover-media ratio-square">
+            <div class="cover-media ratio-creative">
               <img src="CREATIVE MOCKUP FOUR.png" alt="Creative Design Case Study mockup 4">
               <div class="ph" style="display:none"><span>Creative 4</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCK ONE.png" alt="Creative Design Case Study mockup 5">
-              <div class="ph" style="display:none"><span>Creative 5</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCKUP TWO.png" alt="Creative Design Case Study mockup 6">
-              <div class="ph" style="display:none"><span>Creative 6</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCKUP THREE.png" alt="Creative Design Case Study mockup 7">
-              <div class="ph" style="display:none"><span>Creative 7</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCKUP FOUR.png" alt="Creative Design Case Study mockup 8">
-              <div class="ph" style="display:none"><span>Creative 8</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCK ONE.png" alt="Creative Design Case Study mockup 9">
-              <div class="ph" style="display:none"><span>Creative 9</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCKUP TWO.png" alt="Creative Design Case Study mockup 10">
-              <div class="ph" style="display:none"><span>Creative 10</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCKUP THREE.png" alt="Creative Design Case Study mockup 11">
-              <div class="ph" style="display:none"><span>Creative 11</span></div>
-            </div>
-            <div class="cover-media ratio-square">
-              <img src="CREATIVE MOCKUP FOUR.png" alt="Creative Design Case Study mockup 12">
-              <div class="ph" style="display:none"><span>Creative 12</span></div>
             </div>
           </div>
         </div>
@@ -4384,7 +4387,7 @@ if you're building yours this week, this is your sign to start</p>
             </a>
           </div>
 
-          <p class="whatsapp-note reveal">Send <span class="code">cyx</span> on WhatsApp to receive <b>tailored
+          <p class="whatsapp-note reveal">Send <span class="code">social</span> on WhatsApp to receive <b>tailored
               content ideas, sample reel scripts, and creative concepts</b> for your brand.</p>
         </div>
 
