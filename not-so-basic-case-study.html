@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not So Basic — Creative Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-base:#F8F5FC;
+    --bg-card:#FFFFFF;
+    --pearl:#F4F1F8;
+    --lavender-mist:#EDE7FA;
+    --lavender-soft:#E7DEF6;
+    --lilac:#B9A6DE;
+    --lilac-deep:#8B76BE;
+    --primary:#3E0C70;
+    --gold:#B8912F;
+    --secondary:#FFF2E0;
+    --grey-line:#E7E4EC;
+    --grey-line-soft:#EFEDF3;
+    --text-dark:#1E1B24;
+    --text-soft:rgba(30,27,36,0.62);
+    --text-faint:rgba(30,27,36,0.42);
+    --chrome-1:#FFFFFF;
+    --chrome-2:#CFCBDC;
+    --glow:rgba(62,12,112,0.14);
+    --shadow-soft: 0 16px 40px rgba(90,75,120,0.10);
+    --shadow-hover: 0 22px 50px rgba(90,75,120,0.16);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#EAE6F2;
+    padding: clamp(18px,3vw,40px) clamp(14px,3vw,36px);
+  }
+
+  /* ---- Premium brand-project containers ---- */
+  .brand-card{
+    max-width:1500px;
+    margin:0 auto;
+    border-radius:40px;
+    padding:clamp(16px,2.6vw,34px);
+    box-shadow:0 24px 64px rgba(20,10,40,0.22);
+    overflow:hidden;
+  }
+  .brand-card + .brand-card{ margin-top:clamp(22px,3.4vw,40px); }
+  .brand-card--purple{ background:var(--lavender-soft); box-shadow:0 24px 64px rgba(62,12,112,0.14); }
+  .brand-card--yellow{ background:#FFF3CE; }
+  .brand-card .vs-root,
+  .brand-card .bm-section{ border-radius:24px; }
+
+  .vs-root{
+    background:
+      radial-gradient(ellipse 70% 45% at 12% 0%, rgba(185,166,222,0.30), transparent 60%),
+      radial-gradient(ellipse 55% 40% at 92% 10%, rgba(255,242,224,0.55), transparent 55%),
+      radial-gradient(ellipse 65% 45% at 50% 100%, rgba(62,12,112,0.08), transparent 60%),
+      var(--bg-base);
+    color: var(--text-dark);
+    font-family:'Inter', sans-serif;
+    position:relative;
+    overflow:hidden;
+    padding: clamp(20px, 3vw, 48px) 0 clamp(24px,4vw,54px);
+    isolation:isolate;
+  }
+
+  .vs-root::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode:multiply;
+    pointer-events:none;
+    z-index:2;
+  }
+
+  .vs-shell{
+    max-width:1400px;
+    margin:0 auto;
+    padding: 0 clamp(14px, 3.6vw, 46px);
+    position:relative;
+    z-index:3;
+  }
+
+  .vs-reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity 0.8s cubic-bezier(.16,.84,.44,1), transform 0.8s cubic-bezier(.16,.84,.44,1);
+  }
+  .vs-reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  .vs-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.26em;
+    text-transform:uppercase;
+    color: var(--lilac-deep);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .vs-eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:linear-gradient(90deg, var(--chrome-2), transparent);
+  }
+
+  .vs-hairline{
+    height:1px;
+    width:100%;
+    background:linear-gradient(90deg, transparent, var(--grey-line) 20%, var(--grey-line) 80%, transparent);
+    margin: clamp(16px,2.2vw,28px) 0;
+  }
+
+  /* ============ 1. BRAND HEADER ============ */
+  .vs-header{
+    display:grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: clamp(14px, 2.2vw, 22px);
+    align-items:start;
+  }
+
+  .vs-brand-name{
+    font-family:'Fraunces', serif;
+    font-size: clamp(48px, 6.6vw, 96px);
+    font-weight:500;
+    line-height:0.96;
+    letter-spacing:-0.01em;
+    margin: 6px 0 8px;
+    background:linear-gradient(100deg, #2B2730 10%, var(--primary) 45%, var(--chrome-2) 58%, #2B2730 85%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .vs-brand-name em{
+    font-style:italic;
+    font-weight:400;
+    background:linear-gradient(120deg, var(--primary), var(--lilac), #2B2730, var(--primary));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .vs-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 15px 7px 11px;
+    border-radius:100px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(180deg, #FFFFFF, var(--secondary));
+    box-shadow: var(--shadow-soft);
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:4px;
+  }
+  .vs-badge .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #fff, var(--lilac) 55%, var(--primary));
+    box-shadow:0 0 10px var(--glow);
+  }
+
+  .vs-desc{
+    font-size:16px;
+    line-height:1.68;
+    color:var(--text-soft);
+    max-width:520px;
+    font-weight:300;
+  }
+
+  .vs-info-stack{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .vs-info-card{
+    position:relative;
+    padding:12px 15px 11px;
+    border-radius:18px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, #FFFFFF 0%, var(--pearl) 55%, var(--lavender-mist) 100%);
+    box-shadow: var(--shadow-soft), inset 0 1px 0 #fff;
+    overflow:hidden;
+  }
+  .vs-info-card::after{
+    content:"";
+    position:absolute; top:-40%; right:-30%;
+    width:180px; height:180px;
+    background:radial-gradient(circle, var(--glow), transparent 70%);
+    pointer-events:none;
+  }
+  .vs-info-card h4{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin:0 0 7px;
+  }
+  .vs-chips{ display:flex; flex-wrap:wrap; gap:7px; }
+  .vs-chip{
+    font-size:12.5px;
+    padding:6px 13px;
+    border-radius:100px;
+    border:1px solid var(--grey-line);
+    background:#FFFFFF;
+    color:var(--text-dark);
+    font-weight:400;
+    letter-spacing:0.01em;
+    transition: border-color .3s ease, background .3s ease, transform .3s ease;
+  }
+  .vs-chip:hover{
+    border-color:var(--primary);
+    background:var(--secondary);
+    transform:translateY(-2px);
+  }
+  .vs-points{ display:flex; flex-direction:column; gap:6px; }
+  .vs-point{
+    display:flex; gap:9px; align-items:flex-start;
+    font-size:13px; line-height:1.5; color:var(--text-soft);
+  }
+  .vs-point::before{
+    content:"";
+    flex-shrink:0; margin-top:6px;
+    width:8px; height:1.5px;
+    background:var(--primary);
+  }
+
+  /* ============ SECTION LABEL ============ */
+  .vs-section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:20px;
+    margin-bottom:clamp(12px,1.8vw,20px);
+    flex-wrap:wrap;
+  }
+  .vs-section-title{
+    font-family:'Fraunces', serif;
+    font-size:clamp(27px,3vw,40px);
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:6px 0 0;
+    color:var(--text-dark);
+  }
+  .vs-section-note{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    color:var(--text-faint);
+    max-width:280px;
+    text-align:right;
+    line-height:1.55;
+  }
+
+  /* ============ 2. IG PROFILE BREAKDOWN ============ */
+  .vs-stage{
+    position:relative;
+    width:100%;
+    max-width:1100px;
+    aspect-ratio: 1100 / 700;
+    margin:0 auto;
+  }
+  .vs-stage svg{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+  .vs-stage svg line{ stroke:var(--chrome-2); stroke-width:1.2; stroke-dasharray:3 5; }
+  .vs-stage svg circle.node{ fill:var(--primary); }
+
+  .vs-annot{
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    width:150px;
+  }
+  .vs-annot.right{ text-align:right; align-items:flex-end; }
+  .vs-annot .tag{
+    font-family:'Space Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    padding:5px 11px;
+    border-radius:8px;
+    border:1px solid var(--grey-line);
+    background:#FFFFFF;
+    box-shadow: var(--shadow-soft);
+    color:var(--primary);
+    display:inline-block;
+  }
+
+  .vs-phone-wrap{
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%,-50%);
+    width:250px;
+  }
+  .vs-phone{
+    position:relative;
+    border-radius:42px;
+    padding:5px;
+    background:linear-gradient(155deg, #FFFFFF, var(--chrome-2) 35%, #A9A5B8 55%, #FFFFFF 100%);
+    box-shadow: 0 32px 64px rgba(90,75,120,0.22), 0 0 0 1px rgba(255,255,255,0.6), 0 0 40px var(--glow);
+  }
+  .vs-phone-screen{
+    position:relative;
+    border-radius:37px;
+    overflow:hidden;
+    background:#FFFFFF;
+    aspect-ratio:250/520;
+    padding:12px 13px 14px;
+  }
+  .vs-phone-notch{
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:90px; height:20px;
+    background:#1E1B24;
+    border-radius:0 0 14px 14px;
+    z-index:5;
+  }
+  .vs-phone-home{
+    position:absolute; bottom:7px; left:50%; transform:translateX(-50%);
+    width:78px; height:4px; border-radius:4px;
+    background:rgba(30,27,36,0.18);
+  }
+  .vs-ig-header{ display:flex; align-items:center; gap:9px; margin:20px 0 7px;}
+  .vs-avatar{
+    width:42px; height:42px; border-radius:50%;
+    background:conic-gradient(from 220deg, var(--gold), var(--primary), var(--lilac-deep), var(--gold));
+    padding:2px;
+    flex-shrink:0;
+  }
+  .vs-avatar::after{
+    content:""; display:block; width:100%; height:100%; border-radius:50%;
+    background:var(--pearl);
+  }
+  .vs-ig-name-lines{ flex:1; display:flex; flex-direction:column; gap:2px; }
+  .vs-ig-name-lines .dn{ font-family:'Fraunces', serif; font-size:13px; font-weight:600; color:var(--text-dark); }
+  .vs-ig-name-lines .un{ font-size:10px; color:var(--text-faint); font-family:'Space Mono',monospace; }
+  .vs-ig-stats{ display:flex; gap:12px; margin:10px 0; }
+  .vs-ig-stat{ flex:1; display:flex; flex-direction:column; gap:1px; }
+  .vs-ig-stat .n{ font-size:11.5px; font-weight:700; color:var(--text-dark); }
+  .vs-ig-stat .l{ font-size:9px; color:var(--text-faint); }
+  .vs-ig-bio{ font-size:10px; line-height:1.45; color:var(--text-soft); margin-bottom:3px; }
+  .vs-ig-bio .link{ color:var(--primary); font-weight:600; }
+  .vs-ig-btns{ display:flex; gap:6px; margin:8px 0 10px; }
+  .vs-ig-btns div{
+    flex:1; height:24px; border-radius:8px;
+    background:var(--pearl);
+    border:1px solid var(--grey-line);
+    display:flex; align-items:center; justify-content:center;
+    font-size:9px; font-weight:600; color:var(--text-dark);
+  }
+  .vs-ig-btns div:first-child{
+    background:linear-gradient(120deg, var(--primary), var(--lilac-deep));
+    border-color:transparent; color:#fff;
+  }
+  .vs-ig-highlights{ display:flex; gap:9px; margin-bottom:10px; }
+  .vs-hl{ display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .vs-hl-circle{
+    width:34px; height:34px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, var(--gold), var(--primary) 68%);
+    box-shadow:0 4px 10px rgba(90,64,10,0.30);
+  }
+  .vs-hl span{
+    font-size:6.5px;
+    font-weight:600;
+    color:#fff;
+    background:var(--primary);
+    padding:2px 6px;
+    border-radius:6px;
+    letter-spacing:0.02em;
+  }
+  .vs-ig-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .vs-ig-grid div{ aspect-ratio:1; overflow:hidden; background:var(--pearl); }
+  .vs-ig-grid img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .vs-ig-feed-placeholder{
+    aspect-ratio:1; border-radius:10px;
+    border:1.5px dashed var(--lilac);
+    background:linear-gradient(160deg, var(--pearl), var(--lavender-mist));
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    color:var(--lilac-deep);
+  }
+  .vs-ig-feed-placeholder svg{ width:26px; height:26px; opacity:0.6; }
+  .vs-ig-feed-placeholder span{
+    font-family:'Space Mono', monospace; font-size:8px; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; opacity:0.7;
+  }
+
+  .vs-image-frame{
+    width:100%; height:100%;
+    border-radius:16px;
+    border:1.5px dashed var(--lilac);
+    background:linear-gradient(160deg, var(--pearl), var(--lavender-mist));
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--lilac-deep);
+  }
+  .vs-image-frame svg{ width:34px; height:34px; opacity:0.6; }
+  .vs-image-frame span{
+    font-family:'Space Mono', monospace; font-size:9px; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; opacity:0.7;
+  }
+
+  /* ============ MOODBOARD PREVIEW CARDS ============ */
+  .vs-mood-shell{
+    max-width:1320px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(20px,2.6vw,32px);
+  }
+  .vs-mood-card{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    padding:clamp(24px,2.8vw,34px);
+    border-radius:22px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, #FFFFFF 0%, var(--pearl) 55%, var(--lavender-mist) 100%);
+    box-shadow: var(--shadow-soft), inset 0 1px 0 #fff;
+  }
+  .vs-mood-title{
+    font-family:'Fraunces', serif;
+    font-size:clamp(30px,3.6vw,44px);
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--text-dark);
+    margin:0;
+  }
+  .vs-mood-tagline{
+    font-family:'Space Mono', monospace;
+    font-size:14px;
+    color:var(--text-faint);
+    line-height:1.55;
+    margin:-6px 0 0;
+  }
+  .vs-mood-frame{
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:16px;
+    border:1.5px dashed var(--lilac);
+    background:linear-gradient(160deg, var(--pearl), var(--lavender-mist));
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    color:var(--lilac-deep);
+  }
+  .vs-mood-frame svg{ width:50px; height:50px; opacity:0.6; }
+  .vs-mood-frame span{
+    font-family:'Space Mono', monospace; font-size:11px; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; opacity:0.7;
+  }
+  @media(max-width:700px){
+    .vs-mood-shell{ grid-template-columns:1fr; }
+  }
+
+  @media(max-width:880px){
+    .vs-stage{ display:none; }
+    .vs-mobile-phone{ display:flex !important; }
+  }
+  .vs-mobile-phone{ display:none; flex-direction:column; align-items:center; gap:24px; }
+  .vs-legend{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    width:100%;
+    max-width:420px;
+  }
+  .vs-legend .tag{
+    font-family:'Space Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:7px 6px;
+    text-align:center;
+    border-radius:8px;
+    border:1px solid var(--grey-line);
+    background:#FFFFFF;
+    color:var(--primary);
+  }
+
+  /* ============ 3. CONTENT PILLARS ============ */
+  .vs-pillars{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:9px;
+  }
+  .vs-pillar{
+    position:relative;
+    padding:13px 12px 12px;
+    border-radius:16px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, #FFFFFF, var(--pearl));
+    box-shadow: var(--shadow-soft);
+    transition: transform .45s cubic-bezier(.16,.84,.44,1), border-color .35s ease, box-shadow .45s ease;
+    overflow:hidden;
+  }
+  .vs-pillar::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 30% 0%, var(--lavender-mist), transparent 60%);
+    opacity:0;
+    transition:opacity .45s ease;
+  }
+  .vs-pillar:hover{
+    transform:translateY(-6px);
+    border-color:var(--lilac);
+    box-shadow: var(--shadow-hover);
+  }
+  .vs-pillar:hover::before{ opacity:1; }
+  .vs-pillar .icon{
+    width:32px; height:32px;
+    margin-bottom:8px;
+    color:var(--primary);
+    position:relative;
+  }
+  .vs-pillar .icon svg{ width:100%; height:100%; }
+  .vs-pillar h5{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:18px;
+    margin:0 0 4px;
+    position:relative;
+    color:var(--text-dark);
+  }
+  .vs-pillar p{
+    font-size:12px;
+    color:var(--text-soft);
+    line-height:1.5;
+    margin:0;
+    position:relative;
+  }
+  .vs-pillar .num{
+    position:absolute; top:16px; right:18px;
+    font-family:'Space Mono', monospace;
+    font-size:9.5px;
+    color:var(--text-faint);
+  }
+
+  /* ============ 4. FEED PREVIEW ============ */
+  .vs-feed{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+  }
+  .vs-feed-tile{
+    position:relative;
+    aspect-ratio:1;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--grey-line);
+    background:var(--lavender-mist);
+    cursor:pointer;
+    box-shadow: var(--shadow-soft);
+    transition:transform .45s cubic-bezier(.16,.84,.44,1), box-shadow .45s ease;
+  }
+  .vs-feed-tile:hover{ transform:scale(1.03); box-shadow: var(--shadow-hover); z-index:2;}
+  .vs-feed-tile img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+  .vs-feed-tile .idx{
+    position:absolute; top:10px; left:12px;
+    font-family:'Space Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:0.1em;
+    color:#fff;
+    background:rgba(30,27,36,0.45);
+    padding:3px 7px;
+    border-radius:100px;
+    backdrop-filter:blur(4px);
+  }
+  .vs-feed-tile .ratio{
+    position:absolute; bottom:10px; right:12px;
+    font-family:'Space Mono', monospace;
+    font-size:9px;
+    color:#fff;
+    background:rgba(30,27,36,0.45);
+    padding:3px 7px;
+    border-radius:100px;
+    backdrop-filter:blur(4px);
+  }
+
+  /* ============ 5. STORY PREVIEW ============ */
+  .vs-stories{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    max-width:600px;
+  }
+  .vs-story{
+    aspect-ratio:9/16;
+    border-radius:24px;
+    padding:3px;
+    background:conic-gradient(from 200deg, var(--lilac), var(--primary) 30%, var(--chrome-2) 55%, var(--lilac) 100%);
+    transition:transform .45s cubic-bezier(.16,.84,.44,1);
+  }
+  .vs-story:hover{ transform:translateY(-5px); }
+  .vs-story-inner{
+    position:relative;
+    height:100%; width:100%;
+    border-radius:21px;
+    background:linear-gradient(165deg, #FFFFFF, var(--pearl) 75%);
+    overflow:hidden;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:8px;
+  }
+  .vs-story-inner::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:3px; margin:7px;
+    background:rgba(30,27,36,0.12); border-radius:4px;
+  }
+  .vs-story-ring{
+    position:absolute; top:14px; left:11px;
+    width:24px; height:24px; border-radius:50%;
+    background:conic-gradient(from 220deg, var(--lilac), var(--primary), var(--chrome-2));
+    padding:2px;
+  }
+  .vs-story-ring::after{ content:""; display:block; width:100%; height:100%; border-radius:50%; background:var(--pearl);}
+  .vs-story-inner .glyph{ color:var(--chrome-2); }
+  .vs-story-inner .glyph svg{ width:26px; height:26px; }
+  .vs-story-inner .label{ font-family:'Space Mono', monospace; font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-faint); }
+
+  /* ============ 6. CAPTION LIBRARY ============ */
+  .vs-captions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+  .vs-caption-card{
+    position:relative;
+    padding:13px 15px 13px;
+    border-radius:16px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, var(--pearl), var(--lavender-mist));
+    box-shadow: var(--shadow-soft);
+    transition:transform .45s ease, border-color .35s ease, box-shadow .45s ease;
+  }
+  .vs-caption-card:hover{ transform:translateY(-5px); border-color:var(--lilac); box-shadow:var(--shadow-hover); }
+  .vs-caption-card .tag-row{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:7px;
+  }
+  .vs-caption-card .tag{
+    font-family:'Space Mono', monospace;
+    font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--primary);
+  }
+  .vs-caption-card .copy-icon{ color:var(--text-faint); width:15px; height:15px; }
+  .vs-caption-card p{
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--text-dark);
+    margin:0;
+    white-space:pre-line;
+  }
+
+  /* ============ 7. CTA LIBRARY ============ */
+  .vs-ctas{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:7px;
+  }
+  .vs-cta-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 15px;
+    border-radius:14px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, #FFFFFF, var(--pearl));
+    box-shadow: var(--shadow-soft);
+    transition:transform .35s ease, border-color .35s ease, background .35s ease;
+  }
+  .vs-cta-card:hover{
+    transform:translateX(4px);
+    border-color:var(--primary);
+    background:var(--secondary);
+  }
+  .vs-cta-card span.label{ font-size:14px; font-weight:500; color:var(--text-dark); }
+  .vs-cta-card .arrow{ color:var(--primary); flex-shrink:0; transition:transform .35s ease; }
+  .vs-cta-card:hover .arrow{ transform:translateX(4px); }
+
+  /* ============ 8. HASHTAG STRATEGY ============ */
+  .vs-hashtag-card{
+    padding: 14px clamp(16px,3vw,24px);
+    border-radius:20px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, var(--pearl), var(--lavender-mist));
+    box-shadow: var(--shadow-soft);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .vs-hashtag{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    padding:8px 15px;
+    border-radius:100px;
+    border:1px solid var(--grey-line);
+    background:#FFFFFF;
+    color:var(--primary);
+    font-weight:700;
+    transition: border-color .3s ease, background .3s ease, transform .3s ease;
+  }
+  .vs-hashtag:hover{ border-color:var(--primary); background:var(--secondary); transform:translateY(-2px); }
+  .vs-hashtag.brand{ background:var(--primary); color:var(--secondary); border-color:var(--primary); }
+
+  /* ============ 9. COMMUNITY REPLIES ============ */
+  .vs-replies{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .vs-reply-card{
+    display:flex;
+    gap:14px;
+    padding:11px 15px;
+    border-radius:14px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, #FFFFFF, var(--pearl));
+    box-shadow: var(--shadow-soft);
+  }
+  .vs-reply-avatar{
+    width:36px; height:36px; border-radius:50%; flex-shrink:0;
+    background:conic-gradient(from 220deg, var(--lilac), var(--primary), var(--chrome-2));
+    padding:2px;
+  }
+  .vs-reply-avatar::after{ content:""; display:block; width:100%; height:100%; border-radius:50%; background:var(--pearl); }
+  .vs-reply-body{ flex:1; }
+  .vs-reply-tag{
+    font-family:'Space Mono', monospace;
+    font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:5px;
+    display:inline-block;
+  }
+  .vs-reply-text{ font-size:13.5px; line-height:1.55; color:var(--text-dark); margin:0; }
+  .vs-reply-meta{ font-size:10.5px; color:var(--text-faint); margin-top:5px; }
+
+  /* ============ COMPACT LAYOUT: COMBINED ROWS ============ */
+  .vs-combo-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    align-items:start;
+  }
+  .vs-combo-profile{ grid-template-columns:1.15fr 0.85fr; }
+  .vs-combo-col{ min-width:0; }
+  .vs-mini-head{ margin-bottom:10px; }
+  .vs-mini-head .vs-section-title{ font-size:clamp(19px,2.1vw,26px); margin:4px 0 0; }
+  .vs-mini-head .vs-section-note-inline{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    color:var(--text-faint);
+    margin:4px 0 0;
+    line-height:1.5;
+    max-width:360px;
+  }
+
+  /* Shrunk IG profile stage, sized to sit beside pillars */
+  .vs-stage{ max-width:600px; }
+  .vs-phone-wrap{ width:168px; }
+  .vs-annot{ width:98px; }
+  .vs-annot .tag{ font-size:8px; padding:4px 8px; letter-spacing:0.09em; }
+
+  /* Vertical pillar list beside the profile */
+  .vs-pillars-vertical{ display:flex; flex-direction:column; gap:7px; }
+  .vs-pillar-row{
+    display:flex; gap:11px; align-items:flex-start;
+    padding:10px 13px;
+    border-radius:14px;
+    border:1px solid var(--grey-line);
+    background:linear-gradient(160deg, #FFFFFF, var(--pearl));
+    box-shadow: var(--shadow-soft);
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .vs-pillar-row:hover{ transform:translateX(4px); border-color:var(--lilac); box-shadow:var(--shadow-hover); }
+  .vs-pillar-row .icon{ width:23px; height:23px; color:var(--primary); flex-shrink:0; margin-top:2px; }
+  .vs-pillar-row .icon svg{ width:100%; height:100%; }
+  .vs-pillar-row .content h5{
+    font-family:'Fraunces', serif; font-weight:500; font-size:14.5px;
+    margin:0 0 3px; color:var(--text-dark);
+    display:flex; align-items:baseline; gap:7px;
+  }
+  .vs-pillar-row .content h5 .num{ font-family:'Space Mono', monospace; font-size:9px; font-weight:400; color:var(--text-faint); }
+  .vs-pillar-row .content p{ font-size:11.5px; line-height:1.45; color:var(--text-soft); margin:0; }
+
+  /* Stacked CTA list variant (used beside stories) */
+  .vs-ctas--stacked{ grid-template-columns:1fr; gap:7px; }
+
+  /* Feed + Captions combo row — equal height, compact grid */
+  .vs-combo-feed{ grid-template-columns:1.05fr 0.95fr; align-items:stretch; }
+  .vs-combo-feed .vs-combo-col{ display:flex; flex-direction:column; }
+  .vs-combo-feed .vs-feed{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(2,1fr);
+    gap:6px;
+  }
+  .vs-combo-feed .vs-feed-tile{ aspect-ratio:auto; border-radius:13px; }
+  .vs-combo-feed .vs-feed-tile .idx,
+  .vs-combo-feed .vs-feed-tile .ratio{ font-size:8.5px; padding:2px 6px; }
+  .vs-captions--stacked{ display:flex; flex-direction:column; gap:8px; flex:1; }
+
+  @media(max-width:980px){
+    .vs-header{ grid-template-columns:1fr; }
+    .vs-pillars{ grid-template-columns:repeat(2,1fr); }
+    .vs-ctas{ grid-template-columns:1fr; }
+    .vs-combo-grid{ grid-template-columns:1fr; }
+  }
+  @media(max-width:640px){
+    .vs-pillars{ grid-template-columns:1fr 1fr; }
+    .vs-feed{ grid-template-columns:repeat(2,1fr); }
+    .vs-captions{ grid-template-columns:1fr; }
+    .vs-stories{ grid-template-columns:repeat(3,1fr); max-width:100%; }
+  }
+
+  @media(prefers-reduced-motion: reduce){
+    .vs-reveal, .vs-pillar, .vs-feed-tile, .vs-story, .vs-cta-card, .vs-chip, .vs-hashtag{
+      transition:none !important; transform:none !important; opacity:1 !important;
+    }
+  }
+
+  /* ================================================================
+     BLUSH MODE — Y2K CAMPAIGN SECTION (self-contained, scoped)
+  ================================================================ */
+  .bm-section{
+    --hotpink:#FF2E93;
+    --purple:#7B2FF7;
+    --orange:#FF6B35;
+    --lime:#C6FF00;
+    --aqua:#00E0D6;
+    --chrome:#D9D9E3;
+    --ink:#1A0E2E;
+    --butter:#FFF3CE;
+    --butter-deep:#FFE8A0;
+    --butter-pale:#FFFBEA;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    background:
+      radial-gradient(ellipse 55% 40% at 8% 6%, rgba(255,46,147,0.26), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 96% 12%, rgba(0,224,214,0.22), transparent 58%),
+      radial-gradient(ellipse 60% 45% at 50% 105%, rgba(123,47,247,0.22), transparent 60%),
+      linear-gradient(180deg, var(--butter-pale) 0%, var(--butter) 100%);
+    padding: clamp(18px,2.4vw,32px) 0;
+  }
+  .bm-section::before{
+    content:"✦ ★ ✦ ⋆ ✦ ★ ⋆ ✦ ★ ⋆ ✦ ★ ⋆ ✦ ★ ⋆";
+    position:absolute; inset:0;
+    font-size:22px; line-height:5;
+    letter-spacing:38px;
+    color:rgba(123,47,247,0.08);
+    pointer-events:none;
+    z-index:0;
+    word-spacing:40px;
+    overflow:hidden;
+  }
+  .bm-shell{ max-width:1440px; margin:0 auto; padding:0 clamp(10px,2.6vw,32px); position:relative; z-index:2; }
+
+  .bm-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--purple);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:6px;
+  }
+  .bm-eyebrow::before{ content:"✦"; color:var(--hotpink); font-size:13px; }
+  .bm-eyebrow::after{ content:""; flex:1; max-width:60px; height:2px; background:linear-gradient(90deg,var(--hotpink),transparent); }
+
+  .bm-grid{ display:grid; grid-template-columns: 1.42fr 0.58fr; gap:16px; align-items:start; }
+  @media(max-width:980px){ .bm-grid{ grid-template-columns:1fr; } }
+
+  /* ---- Brand name ---- */
+  .bm-brand-wrap{ position:relative; margin-bottom:4px; }
+  .bm-brand-name{
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    font-size:clamp(46px,7.2vw,104px);
+    line-height:0.86;
+    letter-spacing:-0.01em;
+    margin:0;
+    background:linear-gradient(100deg, var(--hotpink) 0%, var(--purple) 45%, var(--orange) 75%, var(--hotpink) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    -webkit-text-stroke:1.5px rgba(26,14,46,0.06);
+    display:inline-block;
+    position:relative;
+  }
+  .bm-sticker{
+    position:absolute;
+    font-size:22px;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+    animation: bm-float 3.2s ease-in-out infinite;
+    z-index:3;
+  }
+  .bm-sticker.s1{ top:-10px; right:14%; animation-delay:0s; }
+  .bm-sticker.s2{ bottom:-6px; left:2%; font-size:18px; animation-delay:.6s; }
+  .bm-sticker.s3{ top:30%; right:-2%; font-size:17px; animation-delay:1.1s; }
+  @keyframes bm-float{ 0%,100%{ transform:translateY(0) rotate(-6deg);} 50%{ transform:translateY(-7px) rotate(8deg);} }
+
+  /* ---- Campaign tag + name ---- */
+  .bm-campaign-pill{
+    display:inline-flex; align-items:center; gap:7px;
+    padding:6px 14px; border-radius:100px;
+    background:linear-gradient(120deg, var(--lime), var(--aqua));
+    font-family:'Space Mono', monospace;
+    font-size:10.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink);
+    box-shadow:0 6px 16px rgba(198,255,0,0.35);
+    margin:4px 0 8px;
+  }
+  .bm-campaign-name{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:clamp(22px,2.6vw,34px);
+    line-height:1.06;
+    margin:0 0 8px;
+    color:var(--ink);
+  }
+  .bm-campaign-name em{
+    font-style:normal;
+    background:linear-gradient(100deg, var(--hotpink), var(--purple));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .bm-desc{
+    font-size:14.5px; line-height:1.55; color:rgba(26,14,46,0.68);
+    max-width:560px; margin:0 0 13px; font-weight:400;
+  }
+  .bm-desc mark{
+    background:none; font-weight:700; color:var(--purple);
+    background:linear-gradient(120deg, rgba(0,224,214,0.35), rgba(0,224,214,0.35));
+    background-repeat:no-repeat; background-size:100% 40%; background-position:0 88%;
+    padding:0 2px;
+  }
+
+  /* ---- Top row: brand + campaign in glass cards ---- */
+  .bm-top-row{ display:flex; gap:12px; margin-bottom:10px; }
+  .bm-top-row .bm-brand-card{ flex:1 1 54%; display:flex; align-items:center; padding:14px 20px; }
+  .bm-top-row .bm-campaign-card{ flex:1 1 46%; display:flex; flex-direction:column; justify-content:center; padding:14px 18px; }
+  .bm-campaign-card .bm-campaign-pill{ margin:0 0 7px; }
+  .bm-campaign-card .bm-campaign-name{ margin:0; }
+  @media(max-width:700px){ .bm-top-row{ flex-direction:column; } }
+
+  /* ---- Feed grid: full-width 3x2, enlarged ---- */
+  .bm-feed{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:9px;
+    margin-bottom:10px;
+  }
+  .bm-feed-tile{
+    position:relative; aspect-ratio:4/5; border-radius:14px; overflow:hidden;
+    border:2px solid var(--butter-pale);
+    box-shadow:0 8px 20px rgba(123,47,247,0.16);
+    background:linear-gradient(135deg, var(--butter-deep), var(--butter-pale));
+    transition:transform .35s cubic-bezier(.16,.84,.44,1), box-shadow .35s ease, rotate .35s ease;
+  }
+  .bm-feed-tile:nth-child(odd){ rotate:-1.6deg; }
+  .bm-feed-tile:nth-child(even){ rotate:1.6deg; }
+  .bm-feed-tile:hover{ transform:translateY(-5px) scale(1.035); rotate:0deg; box-shadow:0 16px 30px rgba(255,46,147,0.28); z-index:4; }
+  .bm-feed-tile img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .bm-feed-tile .tag{
+    position:absolute; top:6px; left:6px;
+    font-family:'Space Mono', monospace;
+    font-size:8.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 7px; border-radius:100px; color:#fff;
+    background:linear-gradient(120deg, var(--hotpink), var(--orange));
+  }
+
+  /* ---- Story frames: compact pair, sit below the Hashtag card in the side column ---- */
+  .bm-side-stories{ display:flex; gap:8px; align-items:flex-start; }
+  .bm-side-stories .bm-story-mockup{ flex:1 1 0; width:auto; aspect-ratio:9/16; }
+  .bm-story-mockup{
+    position:relative; border-radius:12px; overflow:hidden;
+    border:2px solid var(--butter-pale);
+    box-shadow:0 8px 18px rgba(123,47,247,0.18);
+    background:linear-gradient(135deg, var(--butter-deep), var(--butter-pale));
+    transition:transform .35s cubic-bezier(.16,.84,.44,1), box-shadow .35s ease, rotate .35s ease;
+  }
+  .bm-story-mockup:nth-child(1){ rotate:-2deg; }
+  .bm-story-mockup:nth-child(2){ rotate:2deg; }
+  .bm-story-mockup:hover{ transform:translateY(-4px) scale(1.04); rotate:0deg; box-shadow:0 14px 26px rgba(255,46,147,0.3); z-index:4; }
+  .bm-story-mockup img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .bm-story-mockup .tag{
+    position:absolute; bottom:5px; left:50%; transform:translateX(-50%);
+    font-family:'Space Mono', monospace;
+    font-size:7px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    padding:2px 6px; border-radius:100px; color:#fff; white-space:nowrap;
+    background:rgba(26,14,46,0.55); backdrop-filter:blur(2px);
+  }
+  .bm-story-mockup .ring{
+    position:absolute; top:4px; left:4px; width:11px; height:11px; border-radius:50%;
+    background:conic-gradient(from 210deg, var(--hotpink), var(--orange), var(--lime), var(--aqua), var(--purple), var(--hotpink));
+    border:1.5px solid #fff;
+  }
+
+  /* ---- Stories ---- */
+  .bm-stories{ display:flex; gap:14px; }
+  .bm-story{ display:flex; flex-direction:column; align-items:center; gap:5px; cursor:pointer; }
+  .bm-story-ring{
+    width:56px; height:56px; border-radius:50%; padding:3px;
+    background:conic-gradient(from 210deg, var(--hotpink), var(--orange), var(--lime), var(--aqua), var(--purple), var(--hotpink));
+    transition:transform .3s ease;
+  }
+  .bm-story:hover .bm-story-ring{ transform:scale(1.1) rotate(8deg); }
+  .bm-story-inner{
+    width:100%; height:100%; border-radius:50%;
+    background:var(--butter-pale); display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+  }
+  .bm-story .label{ font-size:9.5px; font-weight:600; color:var(--ink); text-align:center; max-width:70px; line-height:1.2; }
+
+  /* ---- Right column glass cards ---- */
+  .bm-side{ display:flex; flex-direction:column; gap:14px; }
+  .bm-glass{
+    position:relative;
+    border-radius:20px;
+    padding:16px 18px 15px;
+    background:rgba(255,243,206,0.6);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1.5px solid rgba(255,251,234,0.9);
+    box-shadow:0 14px 34px rgba(123,47,247,0.14), inset 0 1px 0 rgba(255,251,234,0.8);
+    overflow:hidden;
+  }
+  .bm-glass::after{
+    content:""; position:absolute; top:-30%; right:-20%; width:140px; height:140px;
+    background:radial-gradient(circle, rgba(255,46,147,0.20), transparent 70%);
+    pointer-events:none;
+  }
+  .bm-glass h4{
+    font-family:'Fredoka', sans-serif; font-weight:600; font-size:15px;
+    margin:0 0 10px; color:var(--ink);
+    display:flex; align-items:center; gap:6px;
+  }
+  .bm-cta-list{ display:flex; flex-direction:column; gap:7px; position:relative; }
+  .bm-cta-chip{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:9px 12px; border-radius:12px;
+    font-size:12px; font-weight:600; color:#fff;
+    box-shadow:0 6px 14px rgba(0,0,0,0.10);
+    transition:transform .25s cubic-bezier(.16,.84,.44,1), box-shadow .25s ease;
+    cursor:pointer;
+  }
+  .bm-cta-chip:hover{ transform:translateX(3px) scale(1.02); box-shadow:0 10px 20px rgba(0,0,0,0.16); }
+  .bm-cta-chip:nth-child(1){ background:linear-gradient(110deg, var(--hotpink), #FF5CAE); }
+  .bm-cta-chip:nth-child(2){ background:linear-gradient(110deg, var(--purple), #9B5CFB); }
+  .bm-cta-chip:nth-child(3){ background:linear-gradient(110deg, var(--orange), #FF8F5C); }
+  .bm-cta-chip:nth-child(4){ background:linear-gradient(110deg, #00C2B8, var(--aqua)); }
+  .bm-cta-chip:nth-child(5){ background:linear-gradient(110deg, #9B5CFB, var(--hotpink)); }
+  .bm-cta-chip svg{ flex-shrink:0; width:13px; height:13px; }
+
+  .bm-hash-wrap{ display:flex; flex-wrap:wrap; gap:6px; position:relative; }
+  .bm-hashtag{
+    font-family:'Space Mono', monospace;
+    font-size:11px; font-weight:700;
+    padding:6px 11px; border-radius:100px;
+    color:var(--ink);
+    background:var(--butter-pale);
+    border:1.5px solid rgba(123,47,247,0.22);
+    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+    cursor:default;
+  }
+  .bm-hashtag:hover{ transform:translateY(-2px) scale(1.05); background:linear-gradient(120deg, var(--lime), var(--aqua)); border-color:transparent; }
+  .bm-hashtag.brand{ background:linear-gradient(120deg, var(--hotpink), var(--purple)); color:#fff; border-color:transparent; }
+
+  @media(max-width:700px){
+    .bm-feed{ grid-template-columns:repeat(3,1fr); gap:6px; }
+    .bm-stories{ gap:10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="brand-card brand-card--purple">
+<section class="vs-root">
+  <div class="vs-shell">
+
+    <!-- ============ 1. BRAND HEADER ============ -->
+    <div class="vs-header vs-reveal">
+      <div>
+        <span class="vs-eyebrow">Creative Work — Social Identity</span>
+        <h1 class="vs-brand-name">Not So<br><em>Basic</em></h1>
+        <div class="vs-badge"><span class="dot"></span>Everyday Jewelry · Made-to-Layer</div>
+        <p class="vs-desc">Not So Basic makes minimal, stackable jewelry for everyday wear — rings, chains, and hoops made for lecture halls, late-night drives, and long weekends. Pinterest-coded, effortlessly layered, and never trying too hard. This is jewelry for the version of you that shows up daily, not just for special occasions.</p>
+      </div>
+
+      <div class="vs-info-stack">
+        <div class="vs-info-card">
+          <h4>Target Audience</h4>
+          <div class="vs-points">
+            <div class="vs-point">College girls building their everyday stack between classes</div>
+            <div class="vs-point">Gen Z shoppers who screenshot Pinterest boards before they buy</div>
+            <div class="vs-point">Anyone who wants their initial, birthstone, or a tiny charm in gold</div>
+            <div class="vs-point">Concert and festival dressers layering pieces for a look</div>
+            <div class="vs-point">Budget-conscious buyers who still want it to look expensive</div>
+          </div>
+        </div>
+        <div class="vs-info-card">
+          <h4>Brand Vibe</h4>
+          <div class="vs-chips">
+            <span class="vs-chip">Minimal • Editorial • Effortless • Everyday</span>
+            <span class="vs-chip">Stackable</span>
+            <span class="vs-chip">Pinterest-coded</span>
+            <span class="vs-chip">Affordable-premium</span>
+            <span class="vs-chip">Customizable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vs-hairline"></div>
+
+    <!-- ============ 01/02 — PROFILE + CONTENT STRATEGY ============ -->
+    <div class="vs-reveal">
+      <div class="vs-combo-grid vs-combo-profile">
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">01 — Profile Anatomy</span>
+            <h2 class="vs-section-title">Instagram Profile Breakdown</h2>
+            <p class="vs-section-note-inline">@notsobasic.co — every zone of the live profile, mapped and labeled.</p>
+          </div>
+
+          <div class="vs-stage">
+            <svg viewBox="0 0 1100 700" preserveAspectRatio="none">
+              <line x1="270" y1="103" x2="405" y2="150"></line>
+              <line x1="270" y1="193" x2="405" y2="225"></line>
+              <line x1="270" y1="283" x2="405" y2="295"></line>
+              <line x1="270" y1="373" x2="405" y2="365"></line>
+              <line x1="270" y1="463" x2="405" y2="440"></line>
+              <line x1="830" y1="143" x2="695" y2="180"></line>
+              <line x1="830" y1="263" x2="695" y2="325"></line>
+              <line x1="830" y1="423" x2="695" y2="450"></line>
+              <line x1="830" y1="533" x2="695" y2="540"></line>
+              <circle class="node" cx="405" cy="150" r="3.5"></circle>
+              <circle class="node" cx="405" cy="225" r="3.5"></circle>
+              <circle class="node" cx="405" cy="295" r="3.5"></circle>
+              <circle class="node" cx="405" cy="365" r="3.5"></circle>
+              <circle class="node" cx="405" cy="440" r="3.5"></circle>
+              <circle class="node" cx="695" cy="180" r="3.5"></circle>
+              <circle class="node" cx="695" cy="325" r="3.5"></circle>
+              <circle class="node" cx="695" cy="450" r="3.5"></circle>
+              <circle class="node" cx="695" cy="540" r="3.5"></circle>
+            </svg>
+
+            <div class="vs-annot" style="left:1.8%; top:9.5%;"><span class="tag">Profile Identity</span></div>
+            <div class="vs-annot" style="left:1.8%; top:22.6%;"><span class="tag">Profile Picture</span></div>
+            <div class="vs-annot" style="left:1.8%; top:34.8%;"><span class="tag">Username</span></div>
+            <div class="vs-annot" style="left:1.8%; top:47.2%;"><span class="tag">Bio</span></div>
+            <div class="vs-annot" style="left:1.8%; top:59.6%;"><span class="tag">Highlights</span></div>
+
+            <div class="vs-annot right" style="right:1.8%; top:15.5%;"><span class="tag">Pinned Posts</span></div>
+            <div class="vs-annot right" style="right:1.8%; top:32.6%;"><span class="tag">Feed</span></div>
+            <div class="vs-annot right" style="right:1.8%; top:53.2%;"><span class="tag">CTA</span></div>
+            <div class="vs-annot right" style="right:1.8%; top:69.2%;"><span class="tag">Link</span></div>
+
+            <div class="vs-phone-wrap">
+              <div class="vs-phone">
+                <div class="vs-phone-screen">
+                  <div class="vs-image-frame">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <span>Image Placeholder</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- mobile fallback legend -->
+          <div class="vs-mobile-phone">
+            <div class="vs-phone" style="width:230px;">
+              <div class="vs-phone-screen">
+                <div class="vs-image-frame">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <span>Image Placeholder</span>
+                </div>
+              </div>
+            </div>
+            <div class="vs-legend">
+              <span class="tag">Profile Identity</span>
+              <span class="tag">Profile Picture</span>
+              <span class="tag">Username</span>
+              <span class="tag">Bio</span>
+              <span class="tag">Highlights</span>
+              <span class="tag">Pinned Posts</span>
+              <span class="tag">Feed</span>
+              <span class="tag">CTA</span>
+              <span class="tag">Link</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">02 — Content Strategy</span>
+            <h2 class="vs-section-title">Content Pillars</h2>
+            <p class="vs-section-note-inline">Five recurring formats built around how the brand is actually worn.</p>
+          </div>
+          <div class="vs-pillars-vertical">
+            <div class="vs-pillar-row">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 4l4 3 4-3M8 4l-3 2v3l3 12h8l3-12V6l-3-2"/></svg></div>
+              <div class="content">
+                <h5><span class="num">01</span>Styling</h5>
+                <p>Everyday outfit inspiration using our jewelry.</p>
+              </div>
+            </div>
+            <div class="vs-pillar-row">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+              <div class="content">
+                <h5><span class="num">02</span>New Drops</h5>
+                <p>First looks at new collections before they sell out.</p>
+              </div>
+            </div>
+            <div class="vs-pillar-row">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2c2 3 4 6 4 9a4 4 0 01-8 0c0-3 2-6 4-9z"/></svg></div>
+              <div class="content">
+                <h5><span class="num">03</span>UGC</h5>
+                <p>Real customers styling their pieces in real life.</p>
+              </div>
+            </div>
+            <div class="vs-pillar-row">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/></svg></div>
+              <div class="content">
+                <h5><span class="num">04</span>Behind the Brand</h5>
+                <p>A look at how each piece is designed and packaged.</p>
+              </div>
+            </div>
+            <div class="vs-pillar-row">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.7 5 6.3 5c2 0 3.4 1 5.7 3 2.3-2 3.7-3 5.7-3 3.6 0 5.7 3.9 3.8 7.5C19 16.65 12 21 12 21z"/></svg></div>
+              <div class="content">
+                <h5><span class="num">05</span>Community</h5>
+                <p>Polls, Q&As, and comments that keep the conversation going.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="vs-hairline"></div>
+
+    <!-- ============ 03/04 — FEED PREVIEW + CAPTION LIBRARY ============ -->
+    <div class="vs-reveal">
+      <div class="vs-combo-grid vs-combo-feed">
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">03 — Grid Composition</span>
+            <h2 class="vs-section-title">Feed Preview</h2>
+            <p class="vs-section-note-inline">The live six-post grid — first impression for every new visitor.</p>
+          </div>
+          <div class="vs-feed">
+            <div class="vs-feed-tile"><img src="images/1.png" alt="Moonlight collection earrings" onerror="this.style.display='none'"><span class="idx">01</span><span class="ratio">1:1</span></div>
+            <div class="vs-feed-tile"><img src="images/2.png" alt="Gold shell hoop earrings on quartz" onerror="this.style.display='none'"><span class="idx">02</span><span class="ratio">1:1</span></div>
+            <div class="vs-feed-tile"><img src="images/3.png" alt="Ear styling, day of the week edit" onerror="this.style.display='none'"><span class="idx">03</span><span class="ratio">1:1</span></div>
+            <div class="vs-feed-tile"><img src="images/4.png" alt="Mid season sale, rings and bracelets" onerror="this.style.display='none'"><span class="idx">04</span><span class="ratio">1:1</span></div>
+            <div class="vs-feed-tile"><img src="images/5.png" alt="Necklace and earring campaign shot" onerror="this.style.display='none'"><span class="idx">05</span><span class="ratio">1:1</span></div>
+            <div class="vs-feed-tile"><img src="images/6.png" alt="Chain bracelet campaign shot" onerror="this.style.display='none'"><span class="idx">06</span><span class="ratio">1:1</span></div>
+          </div>
+        </div>
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">04 — Voice</span>
+            <h2 class="vs-section-title">Caption Library</h2>
+            <p class="vs-section-note-inline">Ready-to-post captions, written in the brand's own voice.</p>
+          </div>
+          <div class="vs-captions vs-captions--stacked">
+            <div class="vs-caption-card">
+              <div class="tag-row"><span class="tag">Caption 01</span><svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V6a2 2 0 012-2h10"/></svg></div>
+              <p>the stack you've been eyeing? she's finally here
+new pieces just landed and the coin ring is already selling faster than we can restock
+mix your metals, we're not precious about it
+tag us in your fit, we might just repost it
+link in bio before your size disappears</p>
+            </div>
+            <div class="vs-caption-card">
+              <div class="tag-row"><span class="tag">Caption 02</span><svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V6a2 2 0 012-2h10"/></svg></div>
+              <p>meet your new everyday earrings
+wearing these from the 9am lecture to the 9pm hang, no changes needed
+lightweight enough to forget, pretty enough to notice
+this is what easy dressing actually looks like
+screenshot for later, thank us in your next fit pic</p>
+            </div>
+            <div class="vs-caption-card">
+              <div class="tag-row"><span class="tag">Caption 03</span><svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V6a2 2 0 012-2h10"/></svg></div>
+              <p>the necklace stack that's been living on repeat since day one
+started with one thin chain, ended up with three
+that's just how it happens around here
+if you're building yours this week, this is your sign to start</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="vs-hairline"></div>
+
+    <!-- ============ 05/06 — STORY PREVIEW + CTA LIBRARY ============ -->
+    <div class="vs-reveal">
+      <div class="vs-combo-grid">
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">05 — Ephemeral Layer</span>
+            <h2 class="vs-section-title">Story Preview</h2>
+            <p class="vs-section-note-inline">Daily fragments — softer, faster, more candid than the grid.</p>
+          </div>
+          <div class="vs-stories">
+            <div class="vs-story"><div class="vs-story-inner"><div class="vs-story-ring"></div><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-11 11"/></svg></div><span class="label">New In</span></div></div>
+            <div class="vs-story"><div class="vs-story-inner"><div class="vs-story-ring"></div><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-11 11"/></svg></div><span class="label">Build-a-Charm</span></div></div>
+            <div class="vs-story"><div class="vs-story-inner"><div class="vs-story-ring"></div><div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5-11 11"/></svg></div><span class="label">Restock</span></div></div>
+          </div>
+        </div>
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">06 — Direction</span>
+            <h2 class="vs-section-title">CTA Library</h2>
+            <p class="vs-section-note-inline">Short prompts that turn a scroll into a sale — or a comment.</p>
+          </div>
+          <div class="vs-ctas vs-ctas--stacked">
+            <div class="vs-cta-card"><span class="label">Which piece is joining your stack?</span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="vs-cta-card"><span class="label">Send this to your Thursday drop buddy.</span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="vs-cta-card"><span class="label">Tell us your initials, we'll handle the rest.</span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="vs-cta-card"><span class="label">Save this one for your next payday.</span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="vs-cta-card"><span class="label">Double tap if it's already in your cart.</span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="vs-hairline"></div>
+
+    <!-- ============ 07/08 — HASHTAG STRATEGY + COMMUNITY REPLIES ============ -->
+    <div class="vs-reveal">
+      <div class="vs-combo-grid">
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">07 — Discovery</span>
+            <h2 class="vs-section-title">Hashtag Strategy</h2>
+            <p class="vs-section-note-inline">A paste-ready set — brand, community, discovery, and styling tags in one place.</p>
+          </div>
+          <div class="vs-hashtag-card">
+            <span class="vs-hashtag brand">#notsobasic</span>
+            <span class="vs-hashtag">#stackedjewelry</span>
+            <span class="vs-hashtag">#everydayjewelry</span>
+            <span class="vs-hashtag">#minimalstyle</span>
+            <span class="vs-hashtag">#pinterestaesthetic</span>
+            <span class="vs-hashtag">#collegefits</span>
+            <span class="vs-hashtag">#layeredjewelry</span>
+            <span class="vs-hashtag">#genzfashion</span>
+            <span class="vs-hashtag">#ootdjewelry</span>
+            <span class="vs-hashtag">#affordableluxury</span>
+          </div>
+        </div>
+
+        <div class="vs-combo-col">
+          <div class="vs-mini-head">
+            <span class="vs-eyebrow">08 — Community</span>
+            <h2 class="vs-section-title">Community Replies</h2>
+            <p class="vs-section-note-inline">Warm, on-brand responses ready for comments and DMs.</p>
+          </div>
+          <div class="vs-replies">
+            <div class="vs-reply-card">
+              <div class="vs-reply-avatar"></div>
+              <div class="vs-reply-body">
+                <span class="vs-reply-tag">Product Availability</span>
+                <p class="vs-reply-text">heyy yes it's back!! just restocked, might wanna grab it before it's gone again</p>
+                <div class="vs-reply-meta">replied to @user's comment</div>
+              </div>
+            </div>
+            <div class="vs-reply-card">
+              <div class="vs-reply-avatar"></div>
+              <div class="vs-reply-body">
+                <span class="vs-reply-tag">Compliment</span>
+                <p class="vs-reply-text">okay this comment made our whole day, so glad you're loving the stack</p>
+                <div class="vs-reply-meta">replied to @user's comment</div>
+              </div>
+            </div>
+            <div class="vs-reply-card">
+              <div class="vs-reply-avatar"></div>
+              <div class="vs-reply-body">
+                <span class="vs-reply-tag">Shipping Question</span>
+                <p class="vs-reply-text">totally! standard shipping usually takes 3-5 days, we'll send tracking as soon as it ships</p>
+                <div class="vs-reply-meta">replied via DM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ============================================================
+     BLUSH MODE — Y2K SUMMER CAMPAIGN
+============================================================ -->
+<div class="brand-card brand-card--yellow">
+<section class="bm-section">
+  <div class="bm-shell">
+    <div class="bm-eyebrow">Case Study — Campaign Identity</div>
+
+    <div class="bm-grid">
+      <div class="bm-main">
+        <div class="bm-top-row">
+          <div class="bm-glass bm-brand-card">
+            <div class="bm-brand-wrap">
+              <h2 class="bm-brand-name">BLUSH<br>MODE</h2>
+              <span class="bm-sticker s1">★</span>
+              <span class="bm-sticker s2">♡</span>
+              <span class="bm-sticker s3">☺</span>
+            </div>
+          </div>
+          <div class="bm-glass bm-campaign-card">
+            <div class="bm-campaign-pill">☀ Summer Collection</div>
+            <h3 class="bm-campaign-name">"Summer, But <em>Louder.</em>"</h3>
+          </div>
+        </div>
+
+        <p class="bm-desc">Summer doesn't mean less makeup — it means more color. The Summer Collection is lightweight, sweat-friendly, and built for beach days, festivals, and café dates. <mark>No melting. No hiding. No rules.</mark></p>
+
+        <div class="bm-feed">
+          <div class="bm-feed-tile"><img src="images/7.png" alt="Melon Pop blush duo, campaign hero shot" onerror="this.style.display='none'"><span class="tag">Look 01</span></div>
+          <div class="bm-feed-tile"><img src="images/8.png" alt="Neon eyeliner swatch on tan skin" onerror="this.style.display='none'"><span class="tag">Look 02</span></div>
+          <div class="bm-feed-tile"><img src="images/9.png" alt="Beach day makeup, glossy lip" onerror="this.style.display='none'"><span class="tag">Look 03</span></div>
+          <div class="bm-feed-tile"><img src="images/10.png" alt="Festival face gems and glitter look" onerror="this.style.display='none'"><span class="tag">Look 04</span></div>
+          <div class="bm-feed-tile"><img src="images/11.png" alt="Poolside selfie, holographic highlighter" onerror="this.style.display='none'"><span class="tag">Look 05</span></div>
+          <div class="bm-feed-tile"><img src="images/12.png" alt="Summer Collection flatlay, Y2K props" onerror="this.style.display='none'"><span class="tag">Look 06</span></div>
+        </div>
+
+        <div class="bm-stories">
+          <div class="bm-story"><div class="bm-story-ring"><div class="bm-story-inner">🗳️</div></div><span class="label">This or That</span></div>
+          <div class="bm-story"><div class="bm-story-ring"><div class="bm-story-inner">⏳</div></div><span class="label">48HR Countdown</span></div>
+          <div class="bm-story"><div class="bm-story-ring"><div class="bm-story-inner">💋</div></div><span class="label">Shade Match Quiz</span></div>
+        </div>
+      </div>
+
+      <div class="bm-side">
+        <div class="bm-glass">
+          <h4>✦ CTA Library</h4>
+          <div class="bm-cta-list">
+            <div class="bm-cta-chip"><span>Tag your summer main character.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="bm-cta-chip"><span>Vote for the next shade drop.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="bm-cta-chip"><span>Screenshot your festival face.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="bm-cta-chip"><span>Show us color without rules.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="bm-cta-chip"><span>Double tap for main character energy.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </div>
+        </div>
+        <div class="bm-glass">
+          <h4># Hashtag Strategy</h4>
+          <div class="bm-hash-wrap">
+            <span class="bm-hashtag brand">#blushmode</span>
+            <span class="bm-hashtag">#summerbutlouder</span>
+            <span class="bm-hashtag">#colorwithoutrules</span>
+            <span class="bm-hashtag">#festivalmakeup</span>
+            <span class="bm-hashtag">#sweatproofmakeup</span>
+            <span class="bm-hashtag">#maincharacterenergy</span>
+            <span class="bm-hashtag">#y2kmakeup</span>
+            <span class="bm-hashtag">#colortherapy</span>
+            <span class="bm-hashtag">#vacationmood</span>
+            <span class="bm-hashtag">#boldlooks</span>
+          </div>
+        </div>
+        <div class="bm-side-stories">
+          <div class="bm-story-mockup"><span class="ring"></span><img src="images/13.png" alt="Behind-the-scenes Story, campaign shoot" onerror="this.style.display='none'"><span class="tag">Story</span></div>
+          <div class="bm-story-mockup"><span class="ring"></span><img src="images/14.png" alt="Poll Story, vote for next shade" onerror="this.style.display='none'"><span class="tag">Story</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============================================================
+     MOODBOARD PREVIEW — CLIENT WORK
+============================================================ -->
+<div class="brand-card brand-card--purple">
+<section class="vs-root">
+  <div class="vs-shell">
+
+    <div class="vs-reveal">
+      <div class="vs-mood-shell">
+
+        <div class="vs-mood-card">
+          <h3 class="vs-mood-title">Bean There</h3>
+          <p class="vs-mood-tagline">Warm, everyday coffee culture in one moodboard.</p>
+          <div class="vs-mood-frame">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Image Placeholder</span>
+          </div>
+        </div>
+
+        <div class="vs-mood-card">
+          <h3 class="vs-mood-title">House of Paws</h3>
+          <p class="vs-mood-tagline">Playful, pet-first branding in one moodboard.</p>
+          <div class="vs-mood-frame">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Image Placeholder</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<script>
+  const revealEls = document.querySelectorAll('.vs-reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+    revealEls.forEach(el=>io.observe(el));
+  } else {
+    revealEls.forEach(el=>el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
